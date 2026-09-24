@@ -8,3 +8,5 @@ data/**/__MACOSX/
 data/**/*.zip
 data/**/*.tif
 data/**/*.png
+data/processed/
+results/*.gif
