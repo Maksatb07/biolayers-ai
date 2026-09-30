@@ -1,6 +1,6 @@
 {
-  "version": "0.1.0",
-  "curated": "2026-09-28",
+  "version": "0.2.0",
+  "curated": "2026-09-30",
   "curation_note": "Every entry was checked against its PubMed abstract. Statements paraphrase only what the abstract reports; context records the system the finding was made in, because it rarely matches our images.",
   "papers": {
     "zhou2002": {
@@ -37,7 +37,12 @@
       "entity_type": "receptor",
       "statement": "CXCR4 is the predominant chemokine receptor on human glioma cell lines (13 of 16 lines) and its ligand SDF-1/CXCL12 induces glioma cell chemotaxis.",
       "context": "16 human glioma cell lines and 6 resected glioma specimens, in vitro",
-      "papers": ["zhou2002"]
+      "papers": [
+        "zhou2002"
+      ],
+      "cell_types": [
+        "glioma"
+      ]
     },
     {
       "id": "L2",
@@ -46,7 +51,12 @@
       "entity_type": "pathway",
       "statement": "Invasive glioma cell populations overexpress CXCR4, blocking CXCR4 impairs their in vitro invasion, and glioma cells invade toward a CXCL12 gradient.",
       "context": "malignant glioma cells, in vitro invasion assays and in vivo",
-      "papers": ["ehtesham2006"]
+      "papers": [
+        "ehtesham2006"
+      ],
+      "cell_types": [
+        "glioma"
+      ]
     },
     {
       "id": "L3",
@@ -55,7 +65,12 @@
       "entity_type": "pathway",
       "statement": "SDF1 and CXCR4 expression increases with astrocytoma grade and co-localizes in glioblastoma regions of necrosis and angiogenesis.",
       "context": "immunohistochemistry of human astrocytoma tissue, grades II-IV",
-      "papers": ["rempel2000"]
+      "papers": [
+        "rempel2000"
+      ],
+      "cell_types": [
+        "glioma"
+      ]
     },
     {
       "id": "L4",
@@ -64,7 +79,12 @@
       "entity_type": "cell type",
       "statement": "Carcinoma-associated fibroblasts secrete elevated SDF-1/CXCL12, which acts through CXCR4 on carcinoma cells to promote tumor growth and recruits endothelial progenitors.",
       "context": "human breast carcinoma CAFs, co-implantation xenograft model; not glioma",
-      "papers": ["orimo2005"]
+      "papers": [
+        "orimo2005"
+      ],
+      "cell_types": [
+        "glioma"
+      ]
     }
   ],
   "caveats": [
@@ -72,7 +92,9 @@
       "id": "C1",
       "applies_to": "U373",
       "statement": "Many cell stocks labelled U-373 are the glioblastoma line U-251 due to an earlier cross-contamination, and long-term subclones drift genetically.",
-      "papers": ["torsvik2014"]
+      "papers": [
+        "torsvik2014"
+      ]
     }
   ]
 }

@@ -128,15 +128,17 @@ def statement(level, text, source=None, confidence=None, **extra):
     return out
 
 
-def literature_links(phenotype, kb):
-    """Curated literature statements for a phenotype, each with its citations."""
+def literature_links(phenotype, kb, cell_type):
+    """Curated literature statements for a phenotype in a given cell type, each with its citations.
+    A link is only returned for the cell type it was curated for."""
     papers = kb["papers"]
     return [
         statement(LITERATURE, link["statement"], source="literature_linker",
                   entity=link["entity"], entity_type=link["entity_type"], link_id=link["id"],
                   context=link["context"],
                   citations=[dict(key=k, **papers[k]) for k in link["papers"]])
-        for link in kb["links"] if link["phenotype"] == phenotype
+        for link in kb["links"]
+        if link["phenotype"] == phenotype and cell_type in link["cell_types"]
     ]
 
 

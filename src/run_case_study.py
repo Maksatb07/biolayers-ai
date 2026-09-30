@@ -115,10 +115,11 @@ def gt_consistency(seq, tracked, feats, labels):
     return pd.DataFrame(rows)
 
 
-def build_cell_record(seq, tid, feat, labels, seg_conf, link_iou, kb):
+def build_cell_record(seq, tid, feat, labels, seg_conf, link_iou, kb,
+                      prefix="U373", cell_type="glioma", min_per_frame=MIN_PER_FRAME):
     obs = [
         statement(OBSERVED, f"Cell tracked for {feat.n_frames} frames "
-                            f"({(feat.n_frames - 1) * MIN_PER_FRAME / 60:.1f} h).",
+                            f"({(feat.n_frames - 1) * min_per_frame / 60:.1f} h).",
                   source="tracking", confidence=link_iou),
         statement(OBSERVED, f"Net displacement {feat.net_displacement_um:.1f} um, path length "
                             f"{feat.path_length_um:.1f} um, mean speed {feat.mean_speed_um_per_min:.3f} um/min, "
@@ -138,7 +139,8 @@ def build_cell_record(seq, tid, feat, labels, seg_conf, link_iou, kb):
     ]
     links, hypothesis = [], []
     if any(l["label"] == "migrating" for l in labels):
-        links = literature_links("migrating", kb)
+        links = literature_links("migrating", kb, cell_type)
+    if links:
         hypothesis = [statement(
             INFERRED,
             "Hypothesis only: this cell's migration may involve CXCL12/CXCR4 signalling, possibly "
@@ -148,7 +150,7 @@ def build_cell_record(seq, tid, feat, labels, seg_conf, link_iou, kb):
             source="literature_linker",
             how_to_test="Repeat the time-lapse with a CXCL12 gradient and with a CXCR4 antagonist, "
                         "and compare net displacement and directionality against untreated cells.")]
-    return dict(cell_id=f"U373-{seq}-T{tid}", sequence=seq, track_id=int(tid),
+    return dict(cell_id=f"{prefix}-{seq}-T{tid}", sequence=seq, track_id=int(tid),
                 observations=obs, phenotype=inferred, literature=links, hypothesis=hypothesis)
 
 

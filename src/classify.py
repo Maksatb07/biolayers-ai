@@ -139,7 +139,8 @@ def classify_static_nuclei(features, image_shape):
     z = pd.DataFrame(index=f.index)
     for c in ("area", "circularity", "solidity"):  # reference = interior nuclei, so edge-cut shapes don't skew it
         med = inner[c].median()
-        z[c] = (f[c] - med) / (np.median(np.abs(inner[c] - med)) * 1.4826)
+        mad = np.median(np.abs(inner[c] - med)) * 1.4826
+        z[c] = (f[c] - med) / mad if mad > 0 else 0.0
     worst = z.abs().max(axis=1)
     median_area = inner["area"].median()
     img_q = f.groupby("image")["mean_intensity"].transform(lambda s: s.quantile(PYKNOTIC_INTENSITY_Q))
