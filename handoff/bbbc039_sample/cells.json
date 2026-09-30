@@ -5,7 +5,20 @@
   "image": {
     "file": "IXMtest_A02_s1_w1051DAA7C-7042-435F-99F0-1E847D9B42CB.tif",
     "height": 520,
-    "width": 696
+    "width": 696,
+    "coordinates": "x = column, y = row, origin top-left, pixels"
+  },
+  "overlays": {
+    "transparent": "overlay_transparent.png",
+    "mask": "mask.png",
+    "base": "image.png",
+    "format": "RGBA PNG at image resolution; opaque outline, translucent fill, transparent background; colour = label"
+  },
+  "label_colors": {
+    "no flag": "#78dc78",
+    "abnormal morphology": "#ffa500",
+    "apoptotic/dead": "#ff3c3c",
+    "cut by image edge": "#6e6e6e"
   },
   "evidence_levels": {
     "observed_in_image": "Observed directly in the image (measured from segmented pixels)",
@@ -35,7 +48,7 @@
     },
     "tracking": {
       "model": "BioLayers overlap tracker (Hungarian assignment on mask IoU + gap/flicker clean-up)",
-      "version": "code 393738c",
+      "version": "code a1fcb8a",
       "confidence": "per track: mean IoU between the cell's masks in consecutive frames",
       "dataset": "CTC PhC-C2DH-U373, training sequences 01 and 02 (230 frames)",
       "evaluation_metric": {
@@ -60,7 +73,7 @@
     },
     "phenotype_rules": {
       "model": "Rule-based phenotype classifier (transparent thresholds, not a learned model)",
-      "version": "rules 0.1.0, code 393738c",
+      "version": "rules 0.1.0, code a1fcb8a",
       "confidence": "per label: rule margin, the deciding feature's distance from its threshold mapped to 0.5-0.99 (not a probability)",
       "dataset": "no labelled phenotype data exists for these classes; thresholds set from cell-size units, not fitted to data",
       "evaluation_metric": {
@@ -89,9 +102,14 @@
   "cells": [
     {
       "cell_id": 1,
-      "centroid": [
-        10.4,
-        35.5
+      "color": "#6e6e6e",
+      "x_px": 35.5,
+      "y_px": 10.4,
+      "bbox": [
+        25,
+        0,
+        47,
+        22
       ],
       "contour": [
         [
@@ -343,6 +361,25 @@
           0
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 384,
+        "perimeter_px": 71.1,
+        "circularity": 0.954,
+        "eccentricity": 0.513,
+        "aspect_ratio": 1.16,
+        "solidity": 0.967,
+        "mean_intensity": 532.4,
+        "segmentation_confidence": 0.956
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -362,9 +399,14 @@
     },
     {
       "cell_id": 2,
-      "centroid": [
-        14.7,
-        114.2
+      "color": "#6e6e6e",
+      "x_px": 114.2,
+      "y_px": 14.7,
+      "bbox": [
+        101,
+        0,
+        126,
+        30
       ],
       "contour": [
         [
@@ -692,6 +734,25 @@
           0
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 517,
+        "perimeter_px": 92.2,
+        "circularity": 0.765,
+        "eccentricity": 0.776,
+        "aspect_ratio": 1.58,
+        "solidity": 0.902,
+        "mean_intensity": 494.7,
+        "segmentation_confidence": 0.95
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -711,9 +772,14 @@
     },
     {
       "cell_id": 3,
-      "centroid": [
-        8.8,
-        135.8
+      "color": "#6e6e6e",
+      "x_px": 135.8,
+      "y_px": 8.8,
+      "bbox": [
+        125,
+        0,
+        148,
+        21
       ],
       "contour": [
         [
@@ -989,6 +1055,25 @@
           0
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 392,
+        "perimeter_px": 74.6,
+        "circularity": 0.885,
+        "eccentricity": 0.385,
+        "aspect_ratio": 1.08,
+        "solidity": 0.968,
+        "mean_intensity": 413.9,
+        "segmentation_confidence": 0.952
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -1008,9 +1093,14 @@
     },
     {
       "cell_id": 4,
-      "centroid": [
-        14.8,
-        157.8
+      "color": "#6e6e6e",
+      "x_px": 157.8,
+      "y_px": 14.8,
+      "bbox": [
+        145,
+        0,
+        174,
+        29
       ],
       "contour": [
         [
@@ -1330,6 +1420,25 @@
           0
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 588,
+        "perimeter_px": 92.7,
+        "circularity": 0.86,
+        "eccentricity": 0.64,
+        "aspect_ratio": 1.3,
+        "solidity": 0.951,
+        "mean_intensity": 417.5,
+        "segmentation_confidence": 0.959
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -1349,9 +1458,14 @@
     },
     {
       "cell_id": 5,
-      "centroid": [
-        10.2,
-        303.7
+      "color": "#6e6e6e",
+      "x_px": 303.7,
+      "y_px": 10.2,
+      "bbox": [
+        288,
+        0,
+        321,
+        23
       ],
       "contour": [
         [
@@ -1679,6 +1793,25 @@
           0
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 572,
+        "perimeter_px": 92.2,
+        "circularity": 0.846,
+        "eccentricity": 0.8,
+        "aspect_ratio": 1.67,
+        "solidity": 0.968,
+        "mean_intensity": 333.3,
+        "segmentation_confidence": 0.942
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -1698,9 +1831,14 @@
     },
     {
       "cell_id": 6,
-      "centroid": [
-        2.9,
-        359.5
+      "color": "#6e6e6e",
+      "x_px": 359.5,
+      "y_px": 2.9,
+      "bbox": [
+        351,
+        0,
+        369,
+        8
       ],
       "contour": [
         [
@@ -1848,6 +1986,25 @@
           0
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 110,
+        "perimeter_px": 41.0,
+        "circularity": 0.823,
+        "eccentricity": 0.879,
+        "aspect_ratio": 2.1,
+        "solidity": 0.982,
+        "mean_intensity": 344.5,
+        "segmentation_confidence": 0.849
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -1867,9 +2024,14 @@
     },
     {
       "cell_id": 7,
-      "centroid": [
-        7.6,
-        394.1
+      "color": "#6e6e6e",
+      "x_px": 394.1,
+      "y_px": 7.6,
+      "bbox": [
+        378,
+        0,
+        411,
+        17
       ],
       "contour": [
         [
@@ -2201,6 +2363,25 @@
           0
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 485,
+        "perimeter_px": 88.6,
+        "circularity": 0.776,
+        "eccentricity": 0.834,
+        "aspect_ratio": 1.81,
+        "solidity": 0.964,
+        "mean_intensity": 300.4,
+        "segmentation_confidence": 0.927
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -2220,9 +2401,14 @@
     },
     {
       "cell_id": 8,
-      "centroid": [
-        2.1,
-        468.7
+      "color": "#6e6e6e",
+      "x_px": 468.7,
+      "y_px": 2.1,
+      "bbox": [
+        458,
+        0,
+        479,
+        6
       ],
       "contour": [
         [
@@ -2390,6 +2576,25 @@
           0
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 99,
+        "perimeter_px": 44.7,
+        "circularity": 0.622,
+        "eccentricity": 0.955,
+        "aspect_ratio": 3.36,
+        "solidity": 0.961,
+        "mean_intensity": 339.5,
+        "segmentation_confidence": 0.824
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -2409,9 +2614,14 @@
     },
     {
       "cell_id": 9,
-      "centroid": [
-        3.8,
-        633.2
+      "color": "#6e6e6e",
+      "x_px": 633.2,
+      "y_px": 3.8,
+      "bbox": [
+        622,
+        0,
+        646,
+        10
       ],
       "contour": [
         [
@@ -2615,6 +2825,25 @@
           0
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 186,
+        "perimeter_px": 55.8,
+        "circularity": 0.751,
+        "eccentricity": 0.897,
+        "aspect_ratio": 2.26,
+        "solidity": 0.974,
+        "mean_intensity": 289.7,
+        "segmentation_confidence": 0.888
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -2634,9 +2863,14 @@
     },
     {
       "cell_id": 10,
-      "centroid": [
-        21.7,
-        236.3
+      "color": "#78dc78",
+      "x_px": 236.3,
+      "y_px": 21.7,
+      "bbox": [
+        223,
+        5,
+        250,
+        40
       ],
       "contour": [
         [
@@ -2988,6 +3222,25 @@
           5
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 753,
+        "perimeter_px": 100.7,
+        "circularity": 0.934,
+        "eccentricity": 0.634,
+        "aspect_ratio": 1.29,
+        "solidity": 0.978,
+        "mean_intensity": 613.8,
+        "segmentation_confidence": 0.965
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -3007,9 +3260,14 @@
     },
     {
       "cell_id": 11,
-      "centroid": [
-        26.2,
-        79.9
+      "color": "#78dc78",
+      "x_px": 79.9,
+      "y_px": 26.2,
+      "bbox": [
+        64,
+        6,
+        97,
+        46
       ],
       "contour": [
         [
@@ -3425,6 +3683,25 @@
           6
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 922,
+        "perimeter_px": 120.0,
+        "circularity": 0.805,
+        "eccentricity": 0.779,
+        "aspect_ratio": 1.59,
+        "solidity": 0.951,
+        "mean_intensity": 579.4,
+        "segmentation_confidence": 0.962
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -3444,9 +3721,14 @@
     },
     {
       "cell_id": 12,
-      "centroid": [
-        18.2,
-        12.4
+      "color": "#6e6e6e",
+      "x_px": 12.4,
+      "y_px": 18.2,
+      "bbox": [
+        0,
+        8,
+        27,
+        29
       ],
       "contour": [
         [
@@ -3726,6 +4008,25 @@
           8
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 434,
+        "perimeter_px": 78.5,
+        "circularity": 0.884,
+        "eccentricity": 0.719,
+        "aspect_ratio": 1.44,
+        "solidity": 0.958,
+        "mean_intensity": 539.6,
+        "segmentation_confidence": 0.951
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -3745,9 +4046,14 @@
     },
     {
       "cell_id": 13,
-      "centroid": [
-        28.5,
-        318.8
+      "color": "#ffa500",
+      "x_px": 318.8,
+      "y_px": 28.5,
+      "bbox": [
+        303,
+        11,
+        332,
+        49
       ],
       "contour": [
         [
@@ -4127,6 +4433,25 @@
           11
         ]
       ],
+      "labels": [
+        {
+          "label": "abnormal morphology",
+          "rule": "R-ABN",
+          "confidence": 0.875,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 719,
+        "perimeter_px": 112.2,
+        "circularity": 0.717,
+        "eccentricity": 0.69,
+        "aspect_ratio": 1.38,
+        "solidity": 0.908,
+        "mean_intensity": 395.5,
+        "segmentation_confidence": 0.957
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -4147,9 +4472,14 @@
     },
     {
       "cell_id": 14,
-      "centroid": [
-        45.7,
-        44.5
+      "color": "#ffa500",
+      "x_px": 44.5,
+      "y_px": 45.7,
+      "bbox": [
+        20,
+        26,
+        71,
+        66
       ],
       "contour": [
         [
@@ -4669,6 +4999,25 @@
           26
         ]
       ],
+      "labels": [
+        {
+          "label": "abnormal morphology",
+          "rule": "R-ABN",
+          "confidence": 0.99,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 1287,
+        "perimeter_px": 149.3,
+        "circularity": 0.726,
+        "eccentricity": 0.718,
+        "aspect_ratio": 1.44,
+        "solidity": 0.896,
+        "mean_intensity": 688.3,
+        "segmentation_confidence": 0.969
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -4689,9 +5038,14 @@
     },
     {
       "cell_id": 15,
-      "centroid": [
-        43.1,
-        143.9
+      "color": "#78dc78",
+      "x_px": 143.9,
+      "y_px": 43.1,
+      "bbox": [
+        128,
+        30,
+        161,
+        58
       ],
       "contour": [
         [
@@ -5035,6 +5389,25 @@
           30
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 654,
+        "perimeter_px": 98.7,
+        "circularity": 0.844,
+        "eccentricity": 0.753,
+        "aspect_ratio": 1.52,
+        "solidity": 0.955,
+        "mean_intensity": 688.4,
+        "segmentation_confidence": 0.968
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -5054,9 +5427,14 @@
     },
     {
       "cell_id": 16,
-      "centroid": [
-        39.2,
-        690.2
+      "color": "#6e6e6e",
+      "x_px": 690.2,
+      "y_px": 39.2,
+      "bbox": [
+        683,
+        30,
+        696,
+        48
       ],
       "contour": [
         [
@@ -5240,6 +5618,25 @@
           30
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 172,
+        "perimeter_px": 50.4,
+        "circularity": 0.851,
+        "eccentricity": 0.657,
+        "aspect_ratio": 1.33,
+        "solidity": 0.972,
+        "mean_intensity": 604.9,
+        "segmentation_confidence": 0.918
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -5259,9 +5656,14 @@
     },
     {
       "cell_id": 17,
-      "centroid": [
-        45.6,
-        173.4
+      "color": "#78dc78",
+      "x_px": 173.4,
+      "y_px": 45.6,
+      "bbox": [
+        158,
+        34,
+        189,
+        60
       ],
       "contour": [
         [
@@ -5561,6 +5963,25 @@
           34
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 475,
+        "perimeter_px": 88.9,
+        "circularity": 0.755,
+        "eccentricity": 0.874,
+        "aspect_ratio": 2.06,
+        "solidity": 0.942,
+        "mean_intensity": 618.4,
+        "segmentation_confidence": 0.952
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -5580,9 +6001,14 @@
     },
     {
       "cell_id": 18,
-      "centroid": [
-        47.7,
-        603.1
+      "color": "#78dc78",
+      "x_px": 603.1,
+      "y_px": 47.7,
+      "bbox": [
+        593,
+        37,
+        614,
+        60
       ],
       "contour": [
         [
@@ -5814,6 +6240,25 @@
           37
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 311,
+        "perimeter_px": 68.2,
+        "circularity": 0.841,
+        "eccentricity": 0.801,
+        "aspect_ratio": 1.67,
+        "solidity": 0.951,
+        "mean_intensity": 711.9,
+        "segmentation_confidence": 0.946
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -5833,9 +6278,14 @@
     },
     {
       "cell_id": 19,
-      "centroid": [
-        53.4,
-        302.9
+      "color": "#78dc78",
+      "x_px": 302.9,
+      "y_px": 53.4,
+      "bbox": [
+        283,
+        38,
+        322,
+        71
       ],
       "contour": [
         [
@@ -6211,6 +6661,25 @@
           38
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 829,
+        "perimeter_px": 112.5,
+        "circularity": 0.824,
+        "eccentricity": 0.851,
+        "aspect_ratio": 1.9,
+        "solidity": 0.971,
+        "mean_intensity": 686.6,
+        "segmentation_confidence": 0.967
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -6230,9 +6699,14 @@
     },
     {
       "cell_id": 20,
-      "centroid": [
-        47.9,
-        8.0
+      "color": "#6e6e6e",
+      "x_px": 8.0,
+      "y_px": 47.9,
+      "bbox": [
+        0,
+        39,
+        20,
+        60
       ],
       "contour": [
         [
@@ -6476,6 +6950,25 @@
           39
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 308,
+        "perimeter_px": 67.5,
+        "circularity": 0.851,
+        "eccentricity": 0.675,
+        "aspect_ratio": 1.36,
+        "solidity": 0.966,
+        "mean_intensity": 629.5,
+        "segmentation_confidence": 0.938
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -6495,9 +6988,14 @@
     },
     {
       "cell_id": 21,
-      "centroid": [
-        57.4,
-        543.1
+      "color": "#78dc78",
+      "x_px": 543.1,
+      "y_px": 57.4,
+      "bbox": [
+        523,
+        39,
+        562,
+        79
       ],
       "contour": [
         [
@@ -6917,6 +7415,25 @@
           39
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 902,
+        "perimeter_px": 124.7,
+        "circularity": 0.729,
+        "eccentricity": 0.886,
+        "aspect_ratio": 2.15,
+        "solidity": 0.941,
+        "mean_intensity": 564.8,
+        "segmentation_confidence": 0.971
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -6936,9 +7453,14 @@
     },
     {
       "cell_id": 22,
-      "centroid": [
-        51.9,
-        665.5
+      "color": "#78dc78",
+      "x_px": 665.5,
+      "y_px": 51.9,
+      "bbox": [
+        652,
+        41,
+        680,
+        64
       ],
       "contour": [
         [
@@ -7222,6 +7744,25 @@
           41
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 500,
+        "perimeter_px": 81.6,
+        "circularity": 0.944,
+        "eccentricity": 0.619,
+        "aspect_ratio": 1.27,
+        "solidity": 0.971,
+        "mean_intensity": 485.1,
+        "segmentation_confidence": 0.965
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -7241,9 +7782,14 @@
     },
     {
       "cell_id": 23,
-      "centroid": [
-        59.8,
-        483.1
+      "color": "#78dc78",
+      "x_px": 483.1,
+      "y_px": 59.8,
+      "bbox": [
+        462,
+        46,
+        505,
+        75
       ],
       "contour": [
         [
@@ -7663,6 +8209,25 @@
           46
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 978,
+        "perimeter_px": 118.9,
+        "circularity": 0.869,
+        "eccentricity": 0.779,
+        "aspect_ratio": 1.6,
+        "solidity": 0.976,
+        "mean_intensity": 570.8,
+        "segmentation_confidence": 0.972
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -7682,9 +8247,14 @@
     },
     {
       "cell_id": 24,
-      "centroid": [
-        59.2,
-        613.9
+      "color": "#ff3c3c",
+      "x_px": 613.9,
+      "y_px": 59.2,
+      "bbox": [
+        605,
+        51,
+        624,
+        69
       ],
       "contour": [
         [
@@ -7888,6 +8458,25 @@
           51
         ]
       ],
+      "labels": [
+        {
+          "label": "apoptotic/dead",
+          "rule": "R-PYK",
+          "confidence": 0.638,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 254,
+        "perimeter_px": 58.3,
+        "circularity": 0.94,
+        "eccentricity": 0.487,
+        "aspect_ratio": 1.14,
+        "solidity": 0.948,
+        "mean_intensity": 892.3,
+        "segmentation_confidence": 0.93
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -7908,9 +8497,14 @@
     },
     {
       "cell_id": 25,
-      "centroid": [
-        64.7,
-        219.2
+      "color": "#78dc78",
+      "x_px": 219.2,
+      "y_px": 64.7,
+      "bbox": [
+        207,
+        52,
+        234,
+        77
       ],
       "contour": [
         [
@@ -8194,6 +8788,25 @@
           52
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 468,
+        "perimeter_px": 82.4,
+        "circularity": 0.866,
+        "eccentricity": 0.794,
+        "aspect_ratio": 1.64,
+        "solidity": 0.967,
+        "mean_intensity": 691.1,
+        "segmentation_confidence": 0.963
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -8213,9 +8826,14 @@
     },
     {
       "cell_id": 26,
-      "centroid": [
-        66.2,
-        146.2
+      "color": "#78dc78",
+      "x_px": 146.2,
+      "y_px": 66.2,
+      "bbox": [
+        130,
+        54,
+        163,
+        80
       ],
       "contour": [
         [
@@ -8547,6 +9165,25 @@
           54
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 650,
+        "perimeter_px": 95.3,
+        "circularity": 0.9,
+        "eccentricity": 0.718,
+        "aspect_ratio": 1.44,
+        "solidity": 0.969,
+        "mean_intensity": 744.7,
+        "segmentation_confidence": 0.97
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -8566,9 +9203,14 @@
     },
     {
       "cell_id": 27,
-      "centroid": [
-        74.0,
-        677.6
+      "color": "#6e6e6e",
+      "x_px": 677.6,
+      "y_px": 74.0,
+      "bbox": [
+        661,
+        56,
+        693,
+        91
       ],
       "contour": [
         [
@@ -8916,6 +9558,25 @@
           56
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 621,
+        "perimeter_px": 104.2,
+        "circularity": 0.718,
+        "eccentricity": 0.909,
+        "aspect_ratio": 2.4,
+        "solidity": 0.96,
+        "mean_intensity": 455.7,
+        "segmentation_confidence": 0.962
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -8935,9 +9596,14 @@
     },
     {
       "cell_id": 28,
-      "centroid": [
-        79.5,
-        43.0
+      "color": "#78dc78",
+      "x_px": 43.0,
+      "y_px": 79.5,
+      "bbox": [
+        20,
+        67,
+        65,
+        96
       ],
       "contour": [
         [
@@ -9361,6 +10027,25 @@
           67
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 926,
+        "perimeter_px": 121.2,
+        "circularity": 0.793,
+        "eccentricity": 0.813,
+        "aspect_ratio": 1.72,
+        "solidity": 0.948,
+        "mean_intensity": 795.7,
+        "segmentation_confidence": 0.976
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -9380,9 +10065,14 @@
     },
     {
       "cell_id": 29,
-      "centroid": [
-        76.8,
-        374.8
+      "color": "#78dc78",
+      "x_px": 374.8,
+      "y_px": 76.8,
+      "bbox": [
+        356,
+        67,
+        395,
+        88
       ],
       "contour": [
         [
@@ -9730,6 +10420,25 @@
           67
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 608,
+        "perimeter_px": 98.4,
+        "circularity": 0.789,
+        "eccentricity": 0.873,
+        "aspect_ratio": 2.05,
+        "solidity": 0.964,
+        "mean_intensity": 518.5,
+        "segmentation_confidence": 0.959
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -9749,9 +10458,14 @@
     },
     {
       "cell_id": 30,
-      "centroid": [
-        83.8,
-        640.2
+      "color": "#ffa500",
+      "x_px": 640.2,
+      "y_px": 83.8,
+      "bbox": [
+        624,
+        70,
+        659,
+        99
       ],
       "contour": [
         [
@@ -10115,6 +10829,25 @@
           70
         ]
       ],
+      "labels": [
+        {
+          "label": "abnormal morphology",
+          "rule": "R-ABN",
+          "confidence": 0.99,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 563,
+        "perimeter_px": 107.4,
+        "circularity": 0.613,
+        "eccentricity": 0.679,
+        "aspect_ratio": 1.36,
+        "solidity": 0.815,
+        "mean_intensity": 509.2,
+        "segmentation_confidence": 0.958
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -10135,9 +10868,14 @@
     },
     {
       "cell_id": 31,
-      "centroid": [
-        83.0,
-        2.5
+      "color": "#6e6e6e",
+      "x_px": 2.5,
+      "y_px": 83.0,
+      "bbox": [
+        0,
+        73,
+        7,
+        95
       ],
       "contour": [
         [
@@ -10313,6 +11051,25 @@
           73
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 119,
+        "perimeter_px": 47.6,
+        "circularity": 0.661,
+        "eccentricity": 0.941,
+        "aspect_ratio": 2.97,
+        "solidity": 0.967,
+        "mean_intensity": 686.7,
+        "segmentation_confidence": 0.886
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -10332,9 +11089,14 @@
     },
     {
       "cell_id": 32,
-      "centroid": [
-        91.5,
-        99.6
+      "color": "#78dc78",
+      "x_px": 99.6,
+      "y_px": 91.5,
+      "bbox": [
+        86,
+        75,
+        115,
+        110
       ],
       "contour": [
         [
@@ -10686,6 +11448,25 @@
           75
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 689,
+        "perimeter_px": 102.3,
+        "circularity": 0.827,
+        "eccentricity": 0.838,
+        "aspect_ratio": 1.83,
+        "solidity": 0.966,
+        "mean_intensity": 674.3,
+        "segmentation_confidence": 0.963
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -10705,9 +11486,14 @@
     },
     {
       "cell_id": 33,
-      "centroid": [
-        95.5,
-        256.3
+      "color": "#78dc78",
+      "x_px": 256.3,
+      "y_px": 95.5,
+      "bbox": [
+        244,
+        80,
+        271,
+        111
       ],
       "contour": [
         [
@@ -11031,6 +11817,25 @@
           80
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 631,
+        "perimeter_px": 93.3,
+        "circularity": 0.912,
+        "eccentricity": 0.67,
+        "aspect_ratio": 1.35,
+        "solidity": 0.969,
+        "mean_intensity": 536.0,
+        "segmentation_confidence": 0.963
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -11050,9 +11855,14 @@
     },
     {
       "cell_id": 34,
-      "centroid": [
-        99.3,
-        430.8
+      "color": "#78dc78",
+      "x_px": 430.8,
+      "y_px": 99.3,
+      "bbox": [
+        414,
+        87,
+        448,
+        112
       ],
       "contour": [
         [
@@ -11400,6 +12210,25 @@
           87
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 654,
+        "perimeter_px": 97.6,
+        "circularity": 0.863,
+        "eccentricity": 0.763,
+        "aspect_ratio": 1.55,
+        "solidity": 0.965,
+        "mean_intensity": 485.6,
+        "segmentation_confidence": 0.96
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -11419,9 +12248,14 @@
     },
     {
       "cell_id": 35,
-      "centroid": [
-        98.2,
-        33.2
+      "color": "#78dc78",
+      "x_px": 33.2,
+      "y_px": 98.2,
+      "bbox": [
+        17,
+        89,
+        52,
+        108
       ],
       "contour": [
         [
@@ -11737,6 +12571,25 @@
           89
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 500,
+        "perimeter_px": 88.8,
+        "circularity": 0.797,
+        "eccentricity": 0.854,
+        "aspect_ratio": 1.92,
+        "solidity": 0.96,
+        "mean_intensity": 682.8,
+        "segmentation_confidence": 0.97
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -11756,9 +12609,14 @@
     },
     {
       "cell_id": 36,
-      "centroid": [
-        114.4,
-        373.5
+      "color": "#ff3c3c",
+      "x_px": 373.5,
+      "y_px": 114.4,
+      "bbox": [
+        366,
+        103,
+        382,
+        125
       ],
       "contour": [
         [
@@ -11962,6 +12820,25 @@
           104
         ]
       ],
+      "labels": [
+        {
+          "label": "apoptotic/dead",
+          "rule": "R-PYK",
+          "confidence": 0.712,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 201,
+        "perimeter_px": 59.1,
+        "circularity": 0.723,
+        "eccentricity": 0.911,
+        "aspect_ratio": 2.42,
+        "solidity": 0.922,
+        "mean_intensity": 2494.6,
+        "segmentation_confidence": 0.721
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -11982,9 +12859,14 @@
     },
     {
       "cell_id": 37,
-      "centroid": [
-        117.0,
-        217.1
+      "color": "#78dc78",
+      "x_px": 217.1,
+      "y_px": 117.0,
+      "bbox": [
+        202,
+        105,
+        232,
+        131
       ],
       "contour": [
         [
@@ -12292,6 +13174,25 @@
           105
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 583,
+        "perimeter_px": 89.3,
+        "circularity": 0.92,
+        "eccentricity": 0.62,
+        "aspect_ratio": 1.27,
+        "solidity": 0.967,
+        "mean_intensity": 865.1,
+        "segmentation_confidence": 0.957
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -12311,9 +13212,14 @@
     },
     {
       "cell_id": 38,
-      "centroid": [
-        116.6,
-        654.8
+      "color": "#78dc78",
+      "x_px": 654.8,
+      "y_px": 116.6,
+      "bbox": [
+        634,
+        105,
+        677,
+        129
       ],
       "contour": [
         [
@@ -12709,6 +13615,25 @@
           105
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 825,
+        "perimeter_px": 111.3,
+        "circularity": 0.838,
+        "eccentricity": 0.835,
+        "aspect_ratio": 1.82,
+        "solidity": 0.974,
+        "mean_intensity": 647.6,
+        "segmentation_confidence": 0.969
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -12728,9 +13653,14 @@
     },
     {
       "cell_id": 39,
-      "centroid": [
-        121.9,
-        529.5
+      "color": "#78dc78",
+      "x_px": 529.5,
+      "y_px": 121.9,
+      "bbox": [
+        506,
+        107,
+        555,
+        137
       ],
       "contour": [
         [
@@ -13174,6 +14104,25 @@
           107
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 948,
+        "perimeter_px": 128.2,
+        "circularity": 0.725,
+        "eccentricity": 0.907,
+        "aspect_ratio": 2.38,
+        "solidity": 0.971,
+        "mean_intensity": 601.6,
+        "segmentation_confidence": 0.968
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -13193,9 +14142,14 @@
     },
     {
       "cell_id": 40,
-      "centroid": [
-        125.6,
-        24.6
+      "color": "#78dc78",
+      "x_px": 24.6,
+      "y_px": 125.6,
+      "bbox": [
+        8,
+        111,
+        42,
+        142
       ],
       "contour": [
         [
@@ -13567,6 +14521,25 @@
           111
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 810,
+        "perimeter_px": 106.1,
+        "circularity": 0.904,
+        "eccentricity": 0.513,
+        "aspect_ratio": 1.16,
+        "solidity": 0.969,
+        "mean_intensity": 616.7,
+        "segmentation_confidence": 0.968
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -13586,9 +14559,14 @@
     },
     {
       "cell_id": 41,
-      "centroid": [
-        134.8,
-        270.2
+      "color": "#78dc78",
+      "x_px": 270.2,
+      "y_px": 134.8,
+      "bbox": [
+        252,
+        118,
+        288,
+        152
       ],
       "contour": [
         [
@@ -13952,6 +14930,25 @@
           118
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 679,
+        "perimeter_px": 109.1,
+        "circularity": 0.717,
+        "eccentricity": 0.897,
+        "aspect_ratio": 2.27,
+        "solidity": 0.944,
+        "mean_intensity": 509.7,
+        "segmentation_confidence": 0.96
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -13971,9 +14968,14 @@
     },
     {
       "cell_id": 42,
-      "centroid": [
-        134.9,
-        158.4
+      "color": "#78dc78",
+      "x_px": 158.4,
+      "y_px": 134.9,
+      "bbox": [
+        147,
+        119,
+        171,
+        151
       ],
       "contour": [
         [
@@ -14285,6 +15287,25 @@
           119
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 557,
+        "perimeter_px": 89.8,
+        "circularity": 0.867,
+        "eccentricity": 0.774,
+        "aspect_ratio": 1.58,
+        "solidity": 0.964,
+        "mean_intensity": 600.3,
+        "segmentation_confidence": 0.96
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -14304,9 +15325,14 @@
     },
     {
       "cell_id": 43,
-      "centroid": [
-        145.4,
-        90.2
+      "color": "#78dc78",
+      "x_px": 90.2,
+      "y_px": 145.4,
+      "bbox": [
+        73,
+        128,
+        109,
+        163
       ],
       "contour": [
         [
@@ -14698,6 +15724,25 @@
           128
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 867,
+        "perimeter_px": 114.0,
+        "circularity": 0.839,
+        "eccentricity": 0.743,
+        "aspect_ratio": 1.49,
+        "solidity": 0.954,
+        "mean_intensity": 528.1,
+        "segmentation_confidence": 0.968
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -14717,9 +15762,14 @@
     },
     {
       "cell_id": 44,
-      "centroid": [
-        162.9,
-        394.9
+      "color": "#78dc78",
+      "x_px": 394.9,
+      "y_px": 162.9,
+      "bbox": [
+        373,
+        147,
+        420,
+        179
       ],
       "contour": [
         [
@@ -15187,6 +16237,25 @@
           147
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 1170,
+        "perimeter_px": 131.7,
+        "circularity": 0.847,
+        "eccentricity": 0.788,
+        "aspect_ratio": 1.62,
+        "solidity": 0.976,
+        "mean_intensity": 909.8,
+        "segmentation_confidence": 0.971
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -15206,9 +16275,14 @@
     },
     {
       "cell_id": 45,
-      "centroid": [
-        165.6,
-        485.0
+      "color": "#78dc78",
+      "x_px": 485.0,
+      "y_px": 165.6,
+      "bbox": [
+        464,
+        149,
+        508,
+        182
       ],
       "contour": [
         [
@@ -15628,6 +16702,25 @@
           149
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 937,
+        "perimeter_px": 123.1,
+        "circularity": 0.778,
+        "eccentricity": 0.859,
+        "aspect_ratio": 1.95,
+        "solidity": 0.946,
+        "mean_intensity": 1018.0,
+        "segmentation_confidence": 0.97
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -15647,9 +16740,14 @@
     },
     {
       "cell_id": 46,
-      "centroid": [
-        173.9,
-        51.8
+      "color": "#78dc78",
+      "x_px": 51.8,
+      "y_px": 173.9,
+      "bbox": [
+        38,
+        155,
+        67,
+        192
       ],
       "contour": [
         [
@@ -16029,6 +17127,25 @@
           155
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 779,
+        "perimeter_px": 108.1,
+        "circularity": 0.838,
+        "eccentricity": 0.793,
+        "aspect_ratio": 1.64,
+        "solidity": 0.964,
+        "mean_intensity": 670.1,
+        "segmentation_confidence": 0.968
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -16048,9 +17165,14 @@
     },
     {
       "cell_id": 47,
-      "centroid": [
-        167.3,
-        579.3
+      "color": "#78dc78",
+      "x_px": 579.3,
+      "y_px": 167.3,
+      "bbox": [
+        561,
+        157,
+        600,
+        179
       ],
       "contour": [
         [
@@ -16402,6 +17524,25 @@
           157
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 663,
+        "perimeter_px": 99.8,
+        "circularity": 0.836,
+        "eccentricity": 0.827,
+        "aspect_ratio": 1.78,
+        "solidity": 0.969,
+        "mean_intensity": 477.2,
+        "segmentation_confidence": 0.965
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -16421,9 +17562,14 @@
     },
     {
       "cell_id": 48,
-      "centroid": [
-        176.1,
-        194.8
+      "color": "#78dc78",
+      "x_px": 194.8,
+      "y_px": 176.1,
+      "bbox": [
+        175,
+        163,
+        214,
+        191
       ],
       "contour": [
         [
@@ -16803,6 +17949,25 @@
           163
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 824,
+        "perimeter_px": 108.9,
+        "circularity": 0.873,
+        "eccentricity": 0.746,
+        "aspect_ratio": 1.5,
+        "solidity": 0.971,
+        "mean_intensity": 466.8,
+        "segmentation_confidence": 0.965
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -16822,9 +17987,14 @@
     },
     {
       "cell_id": 49,
-      "centroid": [
-        179.1,
-        2.9
+      "color": "#6e6e6e",
+      "x_px": 2.9,
+      "y_px": 179.1,
+      "bbox": [
+        0,
+        167,
+        8,
+        195
       ],
       "contour": [
         [
@@ -17056,6 +18226,25 @@
           167
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 171,
+        "perimeter_px": 60.3,
+        "circularity": 0.59,
+        "eccentricity": 0.954,
+        "aspect_ratio": 3.32,
+        "solidity": 0.966,
+        "mean_intensity": 571.7,
+        "segmentation_confidence": 0.906
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -17075,9 +18264,14 @@
     },
     {
       "cell_id": 50,
-      "centroid": [
-        194.0,
-        131.4
+      "color": "#78dc78",
+      "x_px": 131.4,
+      "y_px": 194.0,
+      "bbox": [
+        121,
+        175,
+        142,
+        215
       ],
       "contour": [
         [
@@ -17441,6 +18635,25 @@
           175
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 672,
+        "perimeter_px": 101.6,
+        "circularity": 0.818,
+        "eccentricity": 0.855,
+        "aspect_ratio": 1.93,
+        "solidity": 0.973,
+        "mean_intensity": 746.9,
+        "segmentation_confidence": 0.961
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -17460,9 +18673,14 @@
     },
     {
       "cell_id": 51,
-      "centroid": [
-        193.5,
-        16.7
+      "color": "#6e6e6e",
+      "x_px": 16.7,
+      "y_px": 193.5,
+      "bbox": [
+        0,
+        179,
+        34,
+        210
       ],
       "contour": [
         [
@@ -17818,6 +19036,25 @@
           179
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 744,
+        "perimeter_px": 103.3,
+        "circularity": 0.876,
+        "eccentricity": 0.599,
+        "aspect_ratio": 1.25,
+        "solidity": 0.962,
+        "mean_intensity": 543.0,
+        "segmentation_confidence": 0.967
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -17837,9 +19074,14 @@
     },
     {
       "cell_id": 52,
-      "centroid": [
-        197.9,
-        289.3
+      "color": "#78dc78",
+      "x_px": 289.3,
+      "y_px": 197.9,
+      "bbox": [
+        267,
+        183,
+        313,
+        213
       ],
       "contour": [
         [
@@ -18271,6 +19513,25 @@
           183
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 982,
+        "perimeter_px": 124.0,
+        "circularity": 0.803,
+        "eccentricity": 0.859,
+        "aspect_ratio": 1.95,
+        "solidity": 0.974,
+        "mean_intensity": 651.9,
+        "segmentation_confidence": 0.969
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -18290,9 +19551,14 @@
     },
     {
       "cell_id": 53,
-      "centroid": [
-        210.0,
-        617.5
+      "color": "#78dc78",
+      "x_px": 617.5,
+      "y_px": 210.0,
+      "bbox": [
+        606,
+        190,
+        630,
+        230
       ],
       "contour": [
         [
@@ -18652,6 +19918,25 @@
           190
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 688,
+        "perimeter_px": 103.5,
+        "circularity": 0.807,
+        "eccentricity": 0.843,
+        "aspect_ratio": 1.86,
+        "solidity": 0.965,
+        "mean_intensity": 469.8,
+        "segmentation_confidence": 0.964
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -18671,9 +19956,14 @@
     },
     {
       "cell_id": 54,
-      "centroid": [
-        209.6,
-        71.8
+      "color": "#78dc78",
+      "x_px": 71.8,
+      "y_px": 209.6,
+      "bbox": [
+        52,
+        196,
+        90,
+        223
       ],
       "contour": [
         [
@@ -19057,6 +20347,25 @@
           196
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 809,
+        "perimeter_px": 107.8,
+        "circularity": 0.874,
+        "eccentricity": 0.73,
+        "aspect_ratio": 1.46,
+        "solidity": 0.972,
+        "mean_intensity": 617.9,
+        "segmentation_confidence": 0.972
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -19076,9 +20385,14 @@
     },
     {
       "cell_id": 55,
-      "centroid": [
-        215.9,
-        251.6
+      "color": "#78dc78",
+      "x_px": 251.6,
+      "y_px": 215.9,
+      "bbox": [
+        240,
+        196,
+        267,
+        240
       ],
       "contour": [
         [
@@ -19490,6 +20804,25 @@
           196
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 859,
+        "perimeter_px": 116.9,
+        "circularity": 0.79,
+        "eccentricity": 0.849,
+        "aspect_ratio": 1.89,
+        "solidity": 0.972,
+        "mean_intensity": 657.9,
+        "segmentation_confidence": 0.963
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -19509,9 +20842,14 @@
     },
     {
       "cell_id": 56,
-      "centroid": [
-        212.4,
-        478.7
+      "color": "#78dc78",
+      "x_px": 478.7,
+      "y_px": 212.4,
+      "bbox": [
+        461,
+        199,
+        498,
+        226
       ],
       "contour": [
         [
@@ -19851,6 +21189,25 @@
           199
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 613,
+        "perimeter_px": 100.6,
+        "circularity": 0.762,
+        "eccentricity": 0.877,
+        "aspect_ratio": 2.08,
+        "solidity": 0.956,
+        "mean_intensity": 508.9,
+        "segmentation_confidence": 0.96
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -19870,9 +21227,14 @@
     },
     {
       "cell_id": 57,
-      "centroid": [
-        218.9,
-        169.5
+      "color": "#78dc78",
+      "x_px": 169.5,
+      "y_px": 218.9,
+      "bbox": [
+        156,
+        201,
+        184,
+        239
       ],
       "contour": [
         [
@@ -20240,6 +21602,25 @@
           201
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 806,
+        "perimeter_px": 106.3,
+        "circularity": 0.896,
+        "eccentricity": 0.695,
+        "aspect_ratio": 1.39,
+        "solidity": 0.966,
+        "mean_intensity": 458.9,
+        "segmentation_confidence": 0.967
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -20259,9 +21640,14 @@
     },
     {
       "cell_id": 58,
-      "centroid": [
-        216.6,
-        412.4
+      "color": "#78dc78",
+      "x_px": 412.4,
+      "y_px": 216.6,
+      "bbox": [
+        397,
+        203,
+        431,
+        232
       ],
       "contour": [
         [
@@ -20605,6 +21991,25 @@
           203
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 713,
+        "perimeter_px": 100.3,
+        "circularity": 0.89,
+        "eccentricity": 0.571,
+        "aspect_ratio": 1.22,
+        "solidity": 0.961,
+        "mean_intensity": 475.1,
+        "segmentation_confidence": 0.962
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -20624,9 +22029,14 @@
     },
     {
       "cell_id": 59,
-      "centroid": [
-        222.4,
-        551.2
+      "color": "#78dc78",
+      "x_px": 551.2,
+      "y_px": 222.4,
+      "bbox": [
+        538,
+        209,
+        567,
+        238
       ],
       "contour": [
         [
@@ -20926,6 +22336,25 @@
           209
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 550,
+        "perimeter_px": 89.7,
+        "circularity": 0.858,
+        "eccentricity": 0.779,
+        "aspect_ratio": 1.59,
+        "solidity": 0.962,
+        "mean_intensity": 544.3,
+        "segmentation_confidence": 0.963
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -20945,9 +22374,14 @@
     },
     {
       "cell_id": 60,
-      "centroid": [
-        237.9,
-        12.4
+      "color": "#6e6e6e",
+      "x_px": 12.4,
+      "y_px": 237.9,
+      "bbox": [
+        0,
+        219,
+        25,
+        259
       ],
       "contour": [
         [
@@ -21311,6 +22745,25 @@
           220
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 728,
+        "perimeter_px": 104.9,
+        "circularity": 0.831,
+        "eccentricity": 0.814,
+        "aspect_ratio": 1.72,
+        "solidity": 0.959,
+        "mean_intensity": 572.6,
+        "segmentation_confidence": 0.961
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -21330,9 +22783,14 @@
     },
     {
       "cell_id": 61,
-      "centroid": [
-        244.3,
-        287.3
+      "color": "#78dc78",
+      "x_px": 287.3,
+      "y_px": 244.3,
+      "bbox": [
+        269,
+        232,
+        307,
+        258
       ],
       "contour": [
         [
@@ -21716,6 +23174,25 @@
           232
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 768,
+        "perimeter_px": 107.0,
+        "circularity": 0.843,
+        "eccentricity": 0.783,
+        "aspect_ratio": 1.61,
+        "solidity": 0.958,
+        "mean_intensity": 774.3,
+        "segmentation_confidence": 0.968
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -21735,9 +23212,14 @@
     },
     {
       "cell_id": 62,
-      "centroid": [
-        250.4,
-        199.5
+      "color": "#78dc78",
+      "x_px": 199.5,
+      "y_px": 250.4,
+      "bbox": [
+        190,
+        233,
+        210,
+        269
       ],
       "contour": [
         [
@@ -22061,6 +23543,25 @@
           233
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 534,
+        "perimeter_px": 91.6,
+        "circularity": 0.8,
+        "eccentricity": 0.871,
+        "aspect_ratio": 2.04,
+        "solidity": 0.964,
+        "mean_intensity": 596.3,
+        "segmentation_confidence": 0.959
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -22080,9 +23581,14 @@
     },
     {
       "cell_id": 63,
-      "centroid": [
-        248.3,
-        385.1
+      "color": "#78dc78",
+      "x_px": 385.1,
+      "y_px": 248.3,
+      "bbox": [
+        369,
+        235,
+        402,
+        265
       ],
       "contour": [
         [
@@ -22414,6 +23920,25 @@
           235
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 720,
+        "perimeter_px": 98.6,
+        "circularity": 0.931,
+        "eccentricity": 0.432,
+        "aspect_ratio": 1.11,
+        "solidity": 0.976,
+        "mean_intensity": 475.0,
+        "segmentation_confidence": 0.965
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -22433,9 +23958,14 @@
     },
     {
       "cell_id": 64,
-      "centroid": [
-        262.5,
-        107.4
+      "color": "#78dc78",
+      "x_px": 107.4,
+      "y_px": 262.5,
+      "bbox": [
+        92,
+        250,
+        124,
+        275
       ],
       "contour": [
         [
@@ -22763,6 +24293,25 @@
           250
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 605,
+        "perimeter_px": 93.0,
+        "circularity": 0.879,
+        "eccentricity": 0.701,
+        "aspect_ratio": 1.4,
+        "solidity": 0.957,
+        "mean_intensity": 617.8,
+        "segmentation_confidence": 0.973
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -22782,9 +24331,14 @@
     },
     {
       "cell_id": 65,
-      "centroid": [
-        267.0,
-        488.5
+      "color": "#78dc78",
+      "x_px": 488.5,
+      "y_px": 267.0,
+      "bbox": [
+        472,
+        254,
+        507,
+        281
       ],
       "contour": [
         [
@@ -23112,6 +24666,25 @@
           254
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 668,
+        "perimeter_px": 97.2,
+        "circularity": 0.889,
+        "eccentricity": 0.662,
+        "aspect_ratio": 1.33,
+        "solidity": 0.965,
+        "mean_intensity": 477.5,
+        "segmentation_confidence": 0.962
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -23131,9 +24704,14 @@
     },
     {
       "cell_id": 66,
-      "centroid": [
-        269.7,
-        410.4
+      "color": "#78dc78",
+      "x_px": 410.4,
+      "y_px": 269.7,
+      "bbox": [
+        396,
+        255,
+        428,
+        286
       ],
       "contour": [
         [
@@ -23469,6 +25047,25 @@
           255
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 705,
+        "perimeter_px": 99.2,
+        "circularity": 0.901,
+        "eccentricity": 0.407,
+        "aspect_ratio": 1.09,
+        "solidity": 0.971,
+        "mean_intensity": 481.0,
+        "segmentation_confidence": 0.963
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -23488,9 +25085,14 @@
     },
     {
       "cell_id": 67,
-      "centroid": [
-        264.7,
-        573.4
+      "color": "#78dc78",
+      "x_px": 573.4,
+      "y_px": 264.7,
+      "bbox": [
+        555,
+        255,
+        593,
+        276
       ],
       "contour": [
         [
@@ -23838,6 +25440,25 @@
           255
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 551,
+        "perimeter_px": 97.6,
+        "circularity": 0.727,
+        "eccentricity": 0.905,
+        "aspect_ratio": 2.35,
+        "solidity": 0.953,
+        "mean_intensity": 543.0,
+        "segmentation_confidence": 0.962
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -23857,9 +25478,14 @@
     },
     {
       "cell_id": 68,
-      "centroid": [
-        273.4,
-        641.1
+      "color": "#78dc78",
+      "x_px": 641.1,
+      "y_px": 273.4,
+      "bbox": [
+        622,
+        255,
+        661,
+        291
       ],
       "contour": [
         [
@@ -24271,6 +25897,25 @@
           255
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 1055,
+        "perimeter_px": 120.2,
+        "circularity": 0.917,
+        "eccentricity": 0.405,
+        "aspect_ratio": 1.09,
+        "solidity": 0.976,
+        "mean_intensity": 579.3,
+        "segmentation_confidence": 0.971
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -24290,9 +25935,14 @@
     },
     {
       "cell_id": 69,
-      "centroid": [
-        283.5,
-        72.4
+      "color": "#78dc78",
+      "x_px": 72.4,
+      "y_px": 283.5,
+      "bbox": [
+        61,
+        268,
+        85,
+        301
       ],
       "contour": [
         [
@@ -24628,6 +26278,25 @@
           268
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 623,
+        "perimeter_px": 94.2,
+        "circularity": 0.883,
+        "eccentricity": 0.714,
+        "aspect_ratio": 1.43,
+        "solidity": 0.96,
+        "mean_intensity": 612.8,
+        "segmentation_confidence": 0.964
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -24647,9 +26316,14 @@
     },
     {
       "cell_id": 70,
-      "centroid": [
-        282.0,
-        106.8
+      "color": "#78dc78",
+      "x_px": 106.8,
+      "y_px": 282.0,
+      "bbox": [
+        93,
+        272,
+        121,
+        294
       ],
       "contour": [
         [
@@ -24941,6 +26615,25 @@
           272
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 456,
+        "perimeter_px": 81.9,
+        "circularity": 0.853,
+        "eccentricity": 0.753,
+        "aspect_ratio": 1.52,
+        "solidity": 0.96,
+        "mean_intensity": 732.9,
+        "segmentation_confidence": 0.967
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -24960,9 +26653,14 @@
     },
     {
       "cell_id": 71,
-      "centroid": [
-        300.6,
-        349.7
+      "color": "#78dc78",
+      "x_px": 349.7,
+      "y_px": 300.6,
+      "bbox": [
+        332,
+        277,
+        367,
+        325
       ],
       "contour": [
         [
@@ -25414,6 +27112,25 @@
           277
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 1179,
+        "perimeter_px": 132.7,
+        "circularity": 0.841,
+        "eccentricity": 0.756,
+        "aspect_ratio": 1.53,
+        "solidity": 0.97,
+        "mean_intensity": 909.0,
+        "segmentation_confidence": 0.977
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -25433,9 +27150,14 @@
     },
     {
       "cell_id": 72,
-      "centroid": [
-        298.7,
-        269.0
+      "color": "#78dc78",
+      "x_px": 269.0,
+      "y_px": 298.7,
+      "bbox": [
+        256,
+        281,
+        283,
+        319
       ],
       "contour": [
         [
@@ -25807,6 +27529,25 @@
           281
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 782,
+        "perimeter_px": 106.1,
+        "circularity": 0.873,
+        "eccentricity": 0.742,
+        "aspect_ratio": 1.49,
+        "solidity": 0.965,
+        "mean_intensity": 687.1,
+        "segmentation_confidence": 0.969
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -25826,9 +27567,14 @@
     },
     {
       "cell_id": 73,
-      "centroid": [
-        298.9,
-        529.5
+      "color": "#78dc78",
+      "x_px": 529.5,
+      "y_px": 298.9,
+      "bbox": [
+        512,
+        287,
+        547,
+        312
       ],
       "contour": [
         [
@@ -26164,6 +27910,25 @@
           287
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 644,
+        "perimeter_px": 96.7,
+        "circularity": 0.866,
+        "eccentricity": 0.731,
+        "aspect_ratio": 1.47,
+        "solidity": 0.961,
+        "mean_intensity": 487.8,
+        "segmentation_confidence": 0.966
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -26183,9 +27948,14 @@
     },
     {
       "cell_id": 74,
-      "centroid": [
-        310.2,
-        3.7
+      "color": "#6e6e6e",
+      "x_px": 3.7,
+      "y_px": 310.2,
+      "bbox": [
+        0,
+        295,
+        10,
+        323
       ],
       "contour": [
         [
@@ -26421,6 +28191,25 @@
           296
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 213,
+        "perimeter_px": 63.8,
+        "circularity": 0.658,
+        "eccentricity": 0.929,
+        "aspect_ratio": 2.7,
+        "solidity": 0.973,
+        "mean_intensity": 824.8,
+        "segmentation_confidence": 0.921
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -26440,9 +28229,14 @@
     },
     {
       "cell_id": 75,
-      "centroid": [
-        317.7,
-        172.9
+      "color": "#78dc78",
+      "x_px": 172.9,
+      "y_px": 317.7,
+      "bbox": [
+        155,
+        295,
+        194,
+        343
       ],
       "contour": [
         [
@@ -26922,6 +28716,25 @@
           295
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 1231,
+        "perimeter_px": 140.1,
+        "circularity": 0.788,
+        "eccentricity": 0.844,
+        "aspect_ratio": 1.86,
+        "solidity": 0.968,
+        "mean_intensity": 550.9,
+        "segmentation_confidence": 0.972
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -26941,9 +28754,14 @@
     },
     {
       "cell_id": 76,
-      "centroid": [
-        299.9,
-        194.1
+      "color": "#ffa500",
+      "x_px": 194.1,
+      "y_px": 299.9,
+      "bbox": [
+        192,
+        298,
+        197,
+        303
       ],
       "contour": [
         [
@@ -26995,6 +28813,25 @@
           298
         ]
       ],
+      "labels": [
+        {
+          "label": "abnormal morphology",
+          "rule": "R-ABN",
+          "confidence": 0.99,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 18,
+        "perimeter_px": 13.7,
+        "circularity": 1.0,
+        "eccentricity": 0.405,
+        "aspect_ratio": 1.09,
+        "solidity": 0.857,
+        "mean_intensity": 440.1,
+        "segmentation_confidence": 0.793
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -27015,9 +28852,14 @@
     },
     {
       "cell_id": 77,
-      "centroid": [
-        309.8,
-        460.2
+      "color": "#78dc78",
+      "x_px": 460.2,
+      "y_px": 309.8,
+      "bbox": [
+        445,
+        298,
+        477,
+        323
       ],
       "contour": [
         [
@@ -27321,6 +29163,25 @@
           298
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 553,
+        "perimeter_px": 89.5,
+        "circularity": 0.868,
+        "eccentricity": 0.752,
+        "aspect_ratio": 1.52,
+        "solidity": 0.953,
+        "mean_intensity": 546.7,
+        "segmentation_confidence": 0.958
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -27340,9 +29201,14 @@
     },
     {
       "cell_id": 78,
-      "centroid": [
-        319.5,
-        328.6
+      "color": "#78dc78",
+      "x_px": 328.6,
+      "y_px": 319.5,
+      "bbox": [
+        315,
+        299,
+        345,
+        338
       ],
       "contour": [
         [
@@ -27734,6 +29600,25 @@
           299
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 848,
+        "perimeter_px": 112.3,
+        "circularity": 0.845,
+        "eccentricity": 0.712,
+        "aspect_ratio": 1.42,
+        "solidity": 0.96,
+        "mean_intensity": 574.6,
+        "segmentation_confidence": 0.972
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -27753,9 +29638,14 @@
     },
     {
       "cell_id": 79,
-      "centroid": [
-        315.5,
-        606.4
+      "color": "#78dc78",
+      "x_px": 606.4,
+      "y_px": 315.5,
+      "bbox": [
+        583,
+        304,
+        630,
+        328
       ],
       "contour": [
         [
@@ -28183,6 +30073,25 @@
           304
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 889,
+        "perimeter_px": 119.3,
+        "circularity": 0.786,
+        "eccentricity": 0.867,
+        "aspect_ratio": 2.01,
+        "solidity": 0.969,
+        "mean_intensity": 616.4,
+        "segmentation_confidence": 0.97
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -28202,9 +30111,14 @@
     },
     {
       "cell_id": 80,
-      "centroid": [
-        333.0,
-        76.3
+      "color": "#78dc78",
+      "x_px": 76.3,
+      "y_px": 333.0,
+      "bbox": [
+        63,
+        320,
+        91,
+        347
       ],
       "contour": [
         [
@@ -28504,6 +30418,25 @@
           320
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 566,
+        "perimeter_px": 87.3,
+        "circularity": 0.934,
+        "eccentricity": 0.587,
+        "aspect_ratio": 1.23,
+        "solidity": 0.968,
+        "mean_intensity": 614.3,
+        "segmentation_confidence": 0.966
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -28523,9 +30456,14 @@
     },
     {
       "cell_id": 81,
-      "centroid": [
-        346.6,
-        294.7
+      "color": "#78dc78",
+      "x_px": 294.7,
+      "y_px": 346.6,
+      "bbox": [
+        282,
+        329,
+        307,
+        367
       ],
       "contour": [
         [
@@ -28885,6 +30823,25 @@
           329
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 708,
+        "perimeter_px": 102.7,
+        "circularity": 0.844,
+        "eccentricity": 0.794,
+        "aspect_ratio": 1.64,
+        "solidity": 0.971,
+        "mean_intensity": 473.0,
+        "segmentation_confidence": 0.969
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -28904,9 +30861,14 @@
     },
     {
       "cell_id": 82,
-      "centroid": [
-        345.4,
-        426.7
+      "color": "#78dc78",
+      "x_px": 426.7,
+      "y_px": 345.4,
+      "bbox": [
+        412,
+        333,
+        443,
+        360
       ],
       "contour": [
         [
@@ -29246,6 +31208,25 @@
           333
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 625,
+        "perimeter_px": 97.3,
+        "circularity": 0.83,
+        "eccentricity": 0.647,
+        "aspect_ratio": 1.31,
+        "solidity": 0.933,
+        "mean_intensity": 494.9,
+        "segmentation_confidence": 0.958
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -29265,9 +31246,14 @@
     },
     {
       "cell_id": 83,
-      "centroid": [
-        352.9,
-        555.4
+      "color": "#78dc78",
+      "x_px": 555.4,
+      "y_px": 352.9,
+      "bbox": [
+        537,
+        342,
+        576,
+        364
       ],
       "contour": [
         [
@@ -29623,6 +31609,25 @@
           342
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 671,
+        "perimeter_px": 100.4,
+        "circularity": 0.836,
+        "eccentricity": 0.823,
+        "aspect_ratio": 1.76,
+        "solidity": 0.967,
+        "mean_intensity": 534.1,
+        "segmentation_confidence": 0.964
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -29642,9 +31647,14 @@
     },
     {
       "cell_id": 84,
-      "centroid": [
-        367.9,
-        227.1
+      "color": "#78dc78",
+      "x_px": 227.1,
+      "y_px": 367.9,
+      "bbox": [
+        208,
+        347,
+        248,
+        390
       ],
       "contour": [
         [
@@ -30112,6 +32122,25 @@
           347
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 1285,
+        "perimeter_px": 135.1,
+        "circularity": 0.885,
+        "eccentricity": 0.605,
+        "aspect_ratio": 1.26,
+        "solidity": 0.972,
+        "mean_intensity": 525.8,
+        "segmentation_confidence": 0.974
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -30131,9 +32160,14 @@
     },
     {
       "cell_id": 85,
-      "centroid": [
-        366.7,
-        69.3
+      "color": "#78dc78",
+      "x_px": 69.3,
+      "y_px": 366.7,
+      "bbox": [
+        54,
+        355,
+        85,
+        379
       ],
       "contour": [
         [
@@ -30441,6 +32475,25 @@
           355
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 536,
+        "perimeter_px": 88.4,
+        "circularity": 0.861,
+        "eccentricity": 0.805,
+        "aspect_ratio": 1.69,
+        "solidity": 0.966,
+        "mean_intensity": 578.1,
+        "segmentation_confidence": 0.964
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -30460,9 +32513,14 @@
     },
     {
       "cell_id": 86,
-      "centroid": [
-        372.5,
-        607.5
+      "color": "#78dc78",
+      "x_px": 607.5,
+      "y_px": 372.5,
+      "bbox": [
+        582,
+        363,
+        633,
+        382
       ],
       "contour": [
         [
@@ -30890,6 +32948,25 @@
           363
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 751,
+        "perimeter_px": 118.4,
+        "circularity": 0.673,
+        "eccentricity": 0.928,
+        "aspect_ratio": 2.68,
+        "solidity": 0.962,
+        "mean_intensity": 474.2,
+        "segmentation_confidence": 0.966
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -30909,9 +32986,14 @@
     },
     {
       "cell_id": 87,
-      "centroid": [
-        395.0,
-        678.6
+      "color": "#6e6e6e",
+      "x_px": 678.6,
+      "y_px": 395.0,
+      "bbox": [
+        664,
+        378,
+        695,
+        413
       ],
       "contour": [
         [
@@ -31287,6 +33369,25 @@
           378
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 774,
+        "perimeter_px": 107.5,
+        "circularity": 0.842,
+        "eccentricity": 0.764,
+        "aspect_ratio": 1.55,
+        "solidity": 0.957,
+        "mean_intensity": 594.0,
+        "segmentation_confidence": 0.972
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -31306,9 +33407,14 @@
     },
     {
       "cell_id": 88,
-      "centroid": [
-        401.2,
-        255.4
+      "color": "#78dc78",
+      "x_px": 255.4,
+      "y_px": 401.2,
+      "bbox": [
+        242,
+        379,
+        269,
+        424
       ],
       "contour": [
         [
@@ -31732,6 +33838,25 @@
           379
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 899,
+        "perimeter_px": 119.5,
+        "circularity": 0.791,
+        "eccentricity": 0.869,
+        "aspect_ratio": 2.02,
+        "solidity": 0.972,
+        "mean_intensity": 617.3,
+        "segmentation_confidence": 0.971
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -31751,9 +33876,14 @@
     },
     {
       "cell_id": 89,
-      "centroid": [
-        398.7,
-        212.1
+      "color": "#78dc78",
+      "x_px": 212.1,
+      "y_px": 398.7,
+      "bbox": [
+        192,
+        382,
+        234,
+        416
       ],
       "contour": [
         [
@@ -32161,6 +34291,25 @@
           382
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 1040,
+        "perimeter_px": 120.5,
+        "circularity": 0.901,
+        "eccentricity": 0.626,
+        "aspect_ratio": 1.28,
+        "solidity": 0.974,
+        "mean_intensity": 589.4,
+        "segmentation_confidence": 0.972
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -32180,9 +34329,14 @@
     },
     {
       "cell_id": 90,
-      "centroid": [
-        408.3,
-        317.5
+      "color": "#78dc78",
+      "x_px": 317.5,
+      "y_px": 408.3,
+      "bbox": [
+        301,
+        387,
+        335,
+        431
       ],
       "contour": [
         [
@@ -32614,6 +34768,25 @@
           387
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 1025,
+        "perimeter_px": 125.6,
+        "circularity": 0.816,
+        "eccentricity": 0.805,
+        "aspect_ratio": 1.69,
+        "solidity": 0.954,
+        "mean_intensity": 968.5,
+        "segmentation_confidence": 0.971
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -32633,9 +34806,14 @@
     },
     {
       "cell_id": 91,
-      "centroid": [
-        399.2,
-        592.7
+      "color": "#78dc78",
+      "x_px": 592.7,
+      "y_px": 399.2,
+      "bbox": [
+        573,
+        388,
+        614,
+        413
       ],
       "contour": [
         [
@@ -33019,6 +35197,25 @@
           388
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 805,
+        "perimeter_px": 108.7,
+        "circularity": 0.857,
+        "eccentricity": 0.794,
+        "aspect_ratio": 1.65,
+        "solidity": 0.976,
+        "mean_intensity": 612.5,
+        "segmentation_confidence": 0.972
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -33038,9 +35235,14 @@
     },
     {
       "cell_id": 92,
-      "centroid": [
-        427.0,
-        137.0
+      "color": "#78dc78",
+      "x_px": 137.0,
+      "y_px": 427.0,
+      "bbox": [
+        119,
+        404,
+        156,
+        450
       ],
       "contour": [
         [
@@ -33500,6 +35702,25 @@
           404
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 1325,
+        "perimeter_px": 133.9,
+        "circularity": 0.929,
+        "eccentricity": 0.589,
+        "aspect_ratio": 1.24,
+        "solidity": 0.981,
+        "mean_intensity": 511.0,
+        "segmentation_confidence": 0.976
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -33519,9 +35740,14 @@
     },
     {
       "cell_id": 93,
-      "centroid": [
-        429.6,
-        415.0
+      "color": "#78dc78",
+      "x_px": 415.0,
+      "y_px": 429.6,
+      "bbox": [
+        406,
+        415,
+        426,
+        446
       ],
       "contour": [
         [
@@ -33813,6 +36039,25 @@
           415
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 478,
+        "perimeter_px": 83.6,
+        "circularity": 0.86,
+        "eccentricity": 0.771,
+        "aspect_ratio": 1.57,
+        "solidity": 0.96,
+        "mean_intensity": 585.9,
+        "segmentation_confidence": 0.958
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -33832,9 +36077,14 @@
     },
     {
       "cell_id": 94,
-      "centroid": [
-        439.8,
-        31.6
+      "color": "#78dc78",
+      "x_px": 31.6,
+      "y_px": 439.8,
+      "bbox": [
+        21,
+        420,
+        43,
+        461
       ],
       "contour": [
         [
@@ -34214,6 +36464,25 @@
           420
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 749,
+        "perimeter_px": 105.6,
+        "circularity": 0.844,
+        "eccentricity": 0.844,
+        "aspect_ratio": 1.87,
+        "solidity": 0.978,
+        "mean_intensity": 530.6,
+        "segmentation_confidence": 0.968
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -34233,9 +36502,14 @@
     },
     {
       "cell_id": 95,
-      "centroid": [
-        448.7,
-        682.4
+      "color": "#6e6e6e",
+      "x_px": 682.4,
+      "y_px": 448.7,
+      "bbox": [
+        668,
+        435,
+        696,
+        465
       ],
       "contour": [
         [
@@ -34543,6 +36817,25 @@
           435
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 520,
+        "perimeter_px": 90.9,
+        "circularity": 0.791,
+        "eccentricity": 0.864,
+        "aspect_ratio": 1.99,
+        "solidity": 0.97,
+        "mean_intensity": 540.2,
+        "segmentation_confidence": 0.957
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -34562,9 +36855,14 @@
     },
     {
       "cell_id": 96,
-      "centroid": [
-        458.1,
-        204.4
+      "color": "#78dc78",
+      "x_px": 204.4,
+      "y_px": 458.1,
+      "bbox": [
+        189,
+        443,
+        220,
+        476
       ],
       "contour": [
         [
@@ -34948,6 +37246,25 @@
           443
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 832,
+        "perimeter_px": 107.8,
+        "circularity": 0.899,
+        "eccentricity": 0.501,
+        "aspect_ratio": 1.16,
+        "solidity": 0.969,
+        "mean_intensity": 443.1,
+        "segmentation_confidence": 0.969
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -34967,9 +37284,14 @@
     },
     {
       "cell_id": 97,
-      "centroid": [
-        457.6,
-        540.5
+      "color": "#78dc78",
+      "x_px": 540.5,
+      "y_px": 457.6,
+      "bbox": [
+        523,
+        443,
+        558,
+        472
       ],
       "contour": [
         [
@@ -35341,6 +37663,25 @@
           443
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 827,
+        "perimeter_px": 105.3,
+        "circularity": 0.938,
+        "eccentricity": 0.559,
+        "aspect_ratio": 1.21,
+        "solidity": 0.981,
+        "mean_intensity": 667.3,
+        "segmentation_confidence": 0.974
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -35360,9 +37701,14 @@
     },
     {
       "cell_id": 98,
-      "centroid": [
-        469.9,
-        281.2
+      "color": "#78dc78",
+      "x_px": 281.2,
+      "y_px": 469.9,
+      "bbox": [
+        271,
+        454,
+        293,
+        488
       ],
       "contour": [
         [
@@ -35690,6 +38036,25 @@
           454
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 563,
+        "perimeter_px": 92.2,
+        "circularity": 0.833,
+        "eccentricity": 0.811,
+        "aspect_ratio": 1.71,
+        "solidity": 0.951,
+        "mean_intensity": 528.0,
+        "segmentation_confidence": 0.964
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -35709,9 +38074,14 @@
     },
     {
       "cell_id": 99,
-      "centroid": [
-        476.9,
-        301.2
+      "color": "#78dc78",
+      "x_px": 301.2,
+      "y_px": 476.9,
+      "bbox": [
+        290,
+        461,
+        315,
+        492
       ],
       "contour": [
         [
@@ -36035,6 +38405,25 @@
           461
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 544,
+        "perimeter_px": 91.6,
+        "circularity": 0.815,
+        "eccentricity": 0.731,
+        "aspect_ratio": 1.46,
+        "solidity": 0.938,
+        "mean_intensity": 534.3,
+        "segmentation_confidence": 0.962
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -36054,9 +38443,14 @@
     },
     {
       "cell_id": 100,
-      "centroid": [
-        481.4,
-        595.3
+      "color": "#78dc78",
+      "x_px": 595.3,
+      "y_px": 481.4,
+      "bbox": [
+        578,
+        462,
+        610,
+        504
       ],
       "contour": [
         [
@@ -36464,6 +38858,25 @@
           462
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 819,
+        "perimeter_px": 118.8,
+        "circularity": 0.729,
+        "eccentricity": 0.885,
+        "aspect_ratio": 2.14,
+        "solidity": 0.966,
+        "mean_intensity": 658.1,
+        "segmentation_confidence": 0.97
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -36483,9 +38896,14 @@
     },
     {
       "cell_id": 101,
-      "centroid": [
-        478.7,
-        656.2
+      "color": "#78dc78",
+      "x_px": 656.2,
+      "y_px": 478.7,
+      "bbox": [
+        636,
+        462,
+        675,
+        498
       ],
       "contour": [
         [
@@ -36889,6 +39307,25 @@
           462
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 974,
+        "perimeter_px": 119.1,
+        "circularity": 0.864,
+        "eccentricity": 0.766,
+        "aspect_ratio": 1.56,
+        "solidity": 0.973,
+        "mean_intensity": 587.1,
+        "segmentation_confidence": 0.973
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -36908,9 +39345,14 @@
     },
     {
       "cell_id": 102,
-      "centroid": [
-        484.9,
-        366.7
+      "color": "#78dc78",
+      "x_px": 366.7,
+      "y_px": 484.9,
+      "bbox": [
+        353,
+        473,
+        383,
+        497
       ],
       "contour": [
         [
@@ -37206,6 +39648,25 @@
           473
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 502,
+        "perimeter_px": 85.8,
+        "circularity": 0.856,
+        "eccentricity": 0.818,
+        "aspect_ratio": 1.74,
+        "solidity": 0.964,
+        "mean_intensity": 557.3,
+        "segmentation_confidence": 0.958
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -37225,9 +39686,14 @@
     },
     {
       "cell_id": 103,
-      "centroid": [
-        495.4,
-        146.0
+      "color": "#78dc78",
+      "x_px": 146.0,
+      "y_px": 495.4,
+      "bbox": [
+        128,
+        482,
+        164,
+        511
       ],
       "contour": [
         [
@@ -37575,6 +40041,25 @@
           482
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (single frame)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 702,
+        "perimeter_px": 102.6,
+        "circularity": 0.839,
+        "eccentricity": 0.826,
+        "aspect_ratio": 1.77,
+        "solidity": 0.97,
+        "mean_intensity": 451.8,
+        "segmentation_confidence": 0.967
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -37594,9 +40079,14 @@
     },
     {
       "cell_id": 104,
-      "centroid": [
-        498.5,
-        4.9
+      "color": "#6e6e6e",
+      "x_px": 4.9,
+      "y_px": 498.5,
+      "bbox": [
+        0,
+        486,
+        13,
+        512
       ],
       "contour": [
         [
@@ -37832,6 +40322,25 @@
           486
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 256,
+        "perimeter_px": 64.6,
+        "circularity": 0.77,
+        "eccentricity": 0.854,
+        "aspect_ratio": 1.92,
+        "solidity": 0.959,
+        "mean_intensity": 583.5,
+        "segmentation_confidence": 0.943
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -37851,9 +40360,14 @@
     },
     {
       "cell_id": 105,
-      "centroid": [
-        501.1,
-        689.2
+      "color": "#6e6e6e",
+      "x_px": 689.2,
+      "y_px": 501.1,
+      "bbox": [
+        681,
+        490,
+        696,
+        515
       ],
       "contour": [
         [
@@ -38093,6 +40607,25 @@
           490
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 276,
+        "perimeter_px": 66.0,
+        "circularity": 0.795,
+        "eccentricity": 0.781,
+        "aspect_ratio": 1.6,
+        "solidity": 0.965,
+        "mean_intensity": 663.4,
+        "segmentation_confidence": 0.945
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -38112,9 +40645,14 @@
     },
     {
       "cell_id": 106,
-      "centroid": [
-        510.6,
-        529.5
+      "color": "#6e6e6e",
+      "x_px": 529.5,
+      "y_px": 510.6,
+      "bbox": [
+        517,
+        500,
+        545,
+        520
       ],
       "contour": [
         [
@@ -38418,6 +40956,25 @@
           500
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 454,
+        "perimeter_px": 82.9,
+        "circularity": 0.831,
+        "eccentricity": 0.763,
+        "aspect_ratio": 1.55,
+        "solidity": 0.954,
+        "mean_intensity": 518.5,
+        "segmentation_confidence": 0.958
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -38437,9 +40994,14 @@
     },
     {
       "cell_id": 107,
-      "centroid": [
-        514.7,
-        427.4
+      "color": "#6e6e6e",
+      "x_px": 427.4,
+      "y_px": 514.7,
+      "bbox": [
+        418,
+        508,
+        440,
+        520
       ],
       "contour": [
         [
@@ -38631,6 +41193,25 @@
           508
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 183,
+        "perimeter_px": 54.0,
+        "circularity": 0.787,
+        "eccentricity": 0.824,
+        "aspect_ratio": 1.77,
+        "solidity": 0.963,
+        "mean_intensity": 335.6,
+        "segmentation_confidence": 0.893
+      },
       "observations": [
         {
           "level": "observed_in_image",
@@ -38650,9 +41231,14 @@
     },
     {
       "cell_id": 108,
-      "centroid": [
-        516.4,
-        309.4
+      "color": "#6e6e6e",
+      "x_px": 309.4,
+      "y_px": 516.4,
+      "bbox": [
+        301,
+        513,
+        318,
+        520
       ],
       "contour": [
         [
@@ -38796,6 +41382,25 @@
           513
         ]
       ],
+      "labels": [
+        {
+          "label": "not assessable (cut by image edge)",
+          "rule": null,
+          "confidence": null,
+          "level": "inferred_by_model"
+        }
+      ],
+      "metrics": {
+        "level": "observed_in_image",
+        "area_px": 94,
+        "perimeter_px": 38.7,
+        "circularity": 0.788,
+        "eccentricity": 0.898,
+        "aspect_ratio": 2.27,
+        "solidity": 0.949,
+        "mean_intensity": 371.1,
+        "segmentation_confidence": 0.869
+      },
       "observations": [
         {
           "level": "observed_in_image",

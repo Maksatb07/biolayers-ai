@@ -1,9 +1,11 @@
 """
 Builds the compact validation report for the website: model, version, metrics,
-limitations. Writes reports/VALIDATION_REPORT.md and a self-contained
-docs/validation_report.html. Every number is read from the benchmark outputs.
+limitations. Writes reports/VALIDATION_REPORT.md, a self-contained
+docs/validation_report.html, and docs/validation_report.json (the same content as
+structured blocks, for the website's /validation route). Every number is read from the benchmark outputs.
 """
 import html
+import json
 import re
 from datetime import date
 from pathlib import Path
@@ -188,4 +190,8 @@ if __name__ == "__main__":
     (REPORTS / "VALIDATION_REPORT.md").write_text(to_md(S), encoding="utf-8")
     (repo / "docs").mkdir(exist_ok=True)
     (repo / "docs" / "validation_report.html").write_text(to_html(S), encoding="utf-8")
-    print("wrote reports/VALIDATION_REPORT.md and docs/validation_report.html")
+    blocks = [dict(type=k, **({"head": x[0], "rows": x[1]} if k == "table" else
+                              {"items": x} if k == "ul" else {"text": x})) for k, x in S]
+    (repo / "docs" / "validation_report.json").write_text(
+        json.dumps(dict(release=RELEASE, generated=str(date.today()), blocks=blocks), indent=2), encoding="utf-8")
+    print("wrote reports/VALIDATION_REPORT.md, docs/validation_report.html and docs/validation_report.json")

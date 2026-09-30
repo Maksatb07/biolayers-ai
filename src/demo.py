@@ -8,9 +8,11 @@ BioLayers AI demo — one command: microscopy in, annotated cells and linked bio
     python src/demo.py --image data/BBBC039/images/<file>.tif
 
 Writes to demo_output/<name>/ (or --out):
-  time-lapse : overlay.mp4, overlay_last_frame.png, masks/tNNN.png (16-bit track IDs),
+  time-lapse : overlays/tNNN.png (transparent RGBA), overlay.mp4, overlay_last_frame.png,
+               masks/tNNN.png (16-bit track IDs),
                tracks.csv, cells.json, flagship.png
-  image      : image.png, overlay.png, mask.png (16-bit cell IDs), cells.csv, cells.json
+  image      : image.png, overlay_transparent.png (RGBA), overlay.png, mask.png (16-bit cell IDs),
+               cells.csv, cells.json
 
 Research and educational system. Not a clinical diagnostic.
 """
@@ -49,6 +51,7 @@ COLORS = {  # BGR
     "apoptotic/dead": (60, 60, 255), "abnormal morphology": (0, 165, 255), "normal": (120, 220, 120),
     "edge": (110, 110, 110),
 }
+HEX = {k: "#%02x%02x%02x" % (r, g, b) for k, (b, g, r) in COLORS.items()}
 _t0 = time.time()
 
 
@@ -114,6 +117,50 @@ def primary_label(labels):
     if "apoptotic/dead" in names:
         return "apoptotic/dead"
     return next(n for n in names if n in MOTILITY)
+
+
+def transparent_overlay(label_img, colour_of, fill_alpha=70):
+    """BGRA overlay at image resolution (opaque outline, translucent fill, transparent background)
+    plus each cell's bounding box as [x0, y0, x1, y1]."""
+    rgba = np.zeros((*label_img.shape, 4), np.uint8)
+    boxes = {}
+    for cid in (int(i) for i in np.unique(label_img) if i != 0):
+        b, g, r = colour_of(cid)
+        m = (label_img == cid).astype(np.uint8)
+        rgba[m > 0] = (b, g, r, fill_alpha)
+        cnts, _ = cv2.findContours(m, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+        cv2.drawContours(rgba, cnts, -1, (b, g, r, 255), 2)
+        x, y, w, h = cv2.boundingRect(m)
+        boxes[cid] = [int(x), int(y), int(x + w), int(y + h)]
+    return rgba, boxes
+
+
+def enrich_records(records, feats, morph, labels, primary, seg_conf, link_iou, boxes, um, mpf):
+    """Adds machine-readable fields for the UI: colour, labels, metrics and per-frame coordinates."""
+    feats = feats.set_index("track_id")
+    for r in records:
+        tid = r["track_id"]
+        f = feats.loc[tid]
+        g = morph[morph["cell_id"] == tid].sort_values("frame")
+        r["color"] = HEX[primary[tid]]
+        r["labels"] = [dict(label=l["label"], rule=l["rule"], confidence=l["confidence"], level=INFERRED)
+                       for l in labels[tid]]
+        r["metrics"] = dict(
+            level=OBSERVED,
+            n_frames=int(f.n_frames), duration_h=round((f.n_frames - 1) * mpf / 60, 2),
+            net_displacement_um=round(f.net_displacement_um, 1), path_length_um=round(f.path_length_um, 1),
+            mean_speed_um_per_min=round(f.mean_speed_um_per_min, 3), directionality=round(f.directionality, 2),
+            median_area_px=round(float(g["area"].median()), 0),
+            median_area_um2=round(float(g["area"].median()) * um * um, 1),
+            median_circularity=round(float(g["circularity"].median()), 3),
+            median_aspect_ratio=round(float(g["aspect_ratio"].median()), 2),
+            median_solidity=round(float(g["solidity"].median()), 3),
+            segmentation_confidence=seg_conf.get(tid), tracking_confidence=link_iou.get(tid))
+        r["track"] = [dict(frame=int(row.frame), time_min=float(row.frame * mpf),
+                           x_px=round(row.centroid_col, 1), y_px=round(row.centroid_row, 1),
+                           x_um=round(row.centroid_col * um, 1), y_um=round(row.centroid_row * um, 1),
+                           area_px=int(row.area), bbox=boxes.get((int(row.frame), tid)))
+                      for row in g.itertuples()]
 
 
 def write_overlay_video(frames, tracked, cents, primary, out_path, min_per_frame, fps=8, scale=1.5):
@@ -227,9 +274,15 @@ def run_timelapse(args, kb, out):
 
     out.mkdir(parents=True, exist_ok=True)
     (out / "masks").mkdir(exist_ok=True)
+    (out / "overlays").mkdir(exist_ok=True)
+    primary = {tid: primary_label(l) for tid, l in labels.items()}
+    boxes = {}
     for t, lab in enumerate(tracked):
         cv2.imwrite(str(out / "masks" / f"t{t:03d}.png"), lab.astype(np.uint16))
-    primary = {tid: primary_label(l) for tid, l in labels.items()}
+        rgba, frame_boxes = transparent_overlay(lab, lambda tid: COLORS[primary.get(tid, "indeterminate")])
+        cv2.imwrite(str(out / "overlays" / f"t{t:03d}.png"), rgba)
+        boxes.update({(t, tid): b for tid, b in frame_boxes.items()})
+    enrich_records(records, feats, morph, labels, primary, seg_conf, link_iou, boxes, um, mpf)
     last = write_overlay_video(frames, tracked, cents, primary, out / "overlay.mp4", mpf)
     cv2.imwrite(str(out / "overlay_last_frame.png"), last)
     morph.rename(columns={"cell_id": "track_id"}).drop(columns=["image"]).to_csv(out / "tracks.csv", index=False)
@@ -237,6 +290,12 @@ def run_timelapse(args, kb, out):
         draw_flagship(frames[-1], cents, flagship, out / "flagship.png")
     atlas = dict(title=f"BioLayers AI cell atlas: {name}", generated=str(date.today()), disclaimer=DISCLAIMER,
                  dataset=dataset, evidence_levels=LEVEL_TEXT,
+                 image=dict(width=int(frames[0].shape[1]), height=int(frames[0].shape[0]),
+                            coordinates="x = column, y = row, origin top-left, pixels"),
+                 overlays=dict(pattern="overlays/t{frame:03d}.png", masks="masks/t{frame:03d}.png",
+                               format="RGBA PNG at image resolution; opaque outline, translucent fill, "
+                                      "transparent background; colour = primary phenotype label"),
+                 label_colors={k: HEX[k] for k in ("migrating", "quiescent", "indeterminate", "apoptotic/dead")},
                  model_cards=model_cards(RULES_VERSION, classifier_eval()),
                  flagship_cell=flagship["cell_id"] if flagship else None, cells=records)
     (out / "cells.json").write_text(to_json(atlas), encoding="utf-8")
@@ -297,9 +356,13 @@ def run_image(args, kb, out):
     cv2.imwrite(str(out / "mask.png"), mask.astype(np.uint16))
     cv2.imwrite(str(out / "image.png"), to_gray8(img))
     view = cv2.cvtColor(to_gray8(img), cv2.COLOR_GRAY2BGR)
+    keys = {int(r.cell_id): ("edge" if "edge" in r.label else r.label if r.label in COLORS else "normal")
+            for r in feats.itertuples()}
+    rgba, boxes = transparent_overlay(mask, lambda cid: COLORS[keys[cid]])
+    cv2.imwrite(str(out / "overlay_transparent.png"), rgba)
     cells = []
     for r in feats.itertuples():
-        key = ("edge" if "edge" in r.label else r.label if r.label in COLORS else "normal")
+        key = keys[int(r.cell_id)]
         cnts, _ = cv2.findContours((mask == r.cell_id).astype(np.uint8), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
         cv2.drawContours(view, cnts, -1, COLORS[key], 1, cv2.LINE_AA)
         obs = [statement(OBSERVED, f"Area {r.area:.0f} px, circularity {r.circularity:.2f}, "
@@ -309,14 +372,28 @@ def run_image(args, kb, out):
                             source="phenotype_rules", confidence=r.confidence)] if r.rule else
                  [statement(INFERRED, f"Phenotype: {r.label}. Migration and proliferation need time-lapse.",
                             source="phenotype_rules")])
-        cells.append(dict(cell_id=int(r.cell_id), centroid=[round(r.centroid_row, 1), round(r.centroid_col, 1)],
-                          contour=max(cnts, key=len)[:, 0, :].tolist() if cnts else [],
-                          observations=obs, phenotype=pheno, literature=[]))
+        cells.append(dict(
+            cell_id=int(r.cell_id), color=HEX[key],
+            x_px=round(r.centroid_col, 1), y_px=round(r.centroid_row, 1), bbox=boxes.get(int(r.cell_id)),
+            contour=max(cnts, key=len)[:, 0, :].tolist() if cnts else [],
+            labels=[dict(label=r.label, rule=r.rule or None, confidence=r.confidence, level=INFERRED)],
+            metrics=dict(level=OBSERVED, area_px=int(r.area), perimeter_px=round(r.perimeter, 1),
+                         circularity=round(r.circularity, 3), eccentricity=round(r.eccentricity, 3),
+                         aspect_ratio=round(r.aspect_ratio, 2), solidity=round(r.solidity, 3),
+                         mean_intensity=round(r.mean_intensity, 1),
+                         segmentation_confidence=round(r.cell_prob, 3)),
+            observations=obs, phenotype=pheno, literature=[]))
     cv2.imwrite(str(out / "overlay.png"), cv2.resize(view, None, fx=2, fy=2, interpolation=cv2.INTER_NEAREST)
                 if max(img.shape) < 900 else view)
     feats.to_csv(out / "cells.csv", index=False)
     doc = dict(title=f"BioLayers AI cells: {path.name}", generated=str(date.today()), disclaimer=DISCLAIMER,
-               image=dict(file=path.name, height=int(img.shape[0]), width=int(img.shape[1])),
+               image=dict(file=path.name, height=int(img.shape[0]), width=int(img.shape[1]),
+                          coordinates="x = column, y = row, origin top-left, pixels"),
+               overlays=dict(transparent="overlay_transparent.png", mask="mask.png", base="image.png",
+                             format="RGBA PNG at image resolution; opaque outline, translucent fill, "
+                                    "transparent background; colour = label"),
+               label_colors={"no flag": HEX["normal"], "abnormal morphology": HEX["abnormal morphology"],
+                             "apoptotic/dead": HEX["apoptotic/dead"], "cut by image edge": HEX["edge"]},
                evidence_levels=LEVEL_TEXT, model_cards=model_cards(RULES_VERSION, classifier_eval()),
                note="Rules R-ABN and R-PYK were designed for nuclear-stain images. No literature links are "
                     "attached to single-frame flags in this release.",
