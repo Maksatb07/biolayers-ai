@@ -52,7 +52,7 @@ read from the Phase 1-2 benchmark outputs.
 
 ### tracking
 - **Model:** BioLayers overlap tracker (Hungarian assignment on mask IoU + gap/flicker clean-up)
-- **Version:** code 20af0cd
+- **Version:** code 393738c
 - **Confidence:** per track: mean IoU between the cell's masks in consecutive frames
 - **Dataset:** CTC PhC-C2DH-U373, training sequences 01 and 02 (230 frames)
 - **Evaluation metric:** `{"seq01": {"link accuracy": 0.9987, "identity switches": 1, "detection precision": 0.928, "detection recall": 0.999}, "seq02": {"link accuracy": 0.9955, "identity switches": 3, "detection precision": 0.857, "detection recall": 0.987}}`
@@ -63,7 +63,7 @@ read from the Phase 1-2 benchmark outputs.
 
 ### phenotype_rules
 - **Model:** Rule-based phenotype classifier (transparent thresholds, not a learned model)
-- **Version:** rules 0.1.0, code 20af0cd
+- **Version:** rules 0.1.0, code 393738c
 - **Confidence:** per label: rule margin, the deciding feature's distance from its threshold mapped to 0.5-0.99 (not a probability)
 - **Dataset:** no labelled phenotype data exists for these classes; thresholds set from cell-size units, not fitted to data
 - **Evaluation metric:** `{"motility label agreement, rule applied to ground-truth vs our trajectories": "10/14 tracks", "note": "checks that tracking errors do not change the label; it does not validate the biology"}`

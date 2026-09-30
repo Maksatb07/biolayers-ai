@@ -18,7 +18,7 @@ these outputs must keep the evidence level visible next to each statement.
 
 | File | Format | Notes |
 |---|---|---|
-| `overlay.mp4` | 1044 x 836, 8 fps, mp4v | Ready-made overlay: outlines and trails coloured by phenotype label. 28 px header, 28 px footer. |
+| `overlay.mp4` | 1044 x 836, 8 fps, H.264 | Ready-made overlay: outlines and trails coloured by phenotype label. 28 px header, 28 px footer. |
 | `overlay_last_frame.png` | PNG | Last video frame, for thumbnails. |
 | `masks/tNNN.png` | 16-bit grayscale PNG, one per frame, original resolution (696 x 520) | Pixel value = `track_id`, 0 = background. The same cell keeps the same value in every frame. Draw your own overlays from these. |
 | `tracks.csv` | CSV, one row per cell per frame | `frame`, `track_id`, `centroid_row`, `centroid_col`, `area`, `perimeter`, `circularity`, `eccentricity`, `aspect_ratio`, `solidity`, intensity and texture columns. Units are pixels. |
