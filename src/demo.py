@@ -40,6 +40,7 @@ from provenance import (OBSERVED, INFERRED, LEVEL_TEXT, REPORTS, load_kb, model_
                         statement, caveats_for)
 from run_case_study import (cell_confidence, per_track_quality, track_morphology,
                             build_cell_record, draw_flagship)
+from video import to_h264
 
 DISCLAIMER = "Research and educational system. Not a clinical diagnostic."
 MOTILITY = ("migrating", "quiescent", "indeterminate")
@@ -156,6 +157,7 @@ def write_overlay_video(frames, tracked, cents, primary, out_path, min_per_frame
                     font, 0.42, (160, 160, 160), 1, cv2.LINE_AA)
         writer.write(canvas)
     writer.release()
+    to_h264(Path(out_path))
     return canvas
 
 

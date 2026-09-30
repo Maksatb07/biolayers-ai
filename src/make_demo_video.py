@@ -16,6 +16,8 @@ import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
 from skimage.io import imread
 
+from video import to_h264
+
 REPO = Path(__file__).resolve().parent.parent
 TL = REPO / "demo_output" / "u373_seq02"
 IMG = REPO / "demo_output" / "bbbc039_sample"
@@ -326,6 +328,7 @@ def main():
     for im in scenes:
         writer.write(cv2.cvtColor(np.asarray(im), cv2.COLOR_RGB2BGR))
     writer.release()
+    to_h264(OUT)
     scenes[6 * FPS + 10 * FPS].save(REPO / "demo_output" / "video_check_segmentation.png")
     print(f"wrote {OUT} ({len(scenes) / FPS:.0f} s, {len(scenes)} frames)")
 
