@@ -16,16 +16,16 @@ Every statement carries exactly one level, and they are never merged:
 
 | Level | Meaning |
 |---|---|
-| `observed_in_image` | Observed directly in the image (measured from segmented pixels) |
+| `observed_directly_in_image` | Observed directly in the image (measured from segmented pixels) |
 | `supported_by_literature` | Supported by published literature (not observed in this image) |
 | `inferred_by_model` | Inferred by a model or rule (not an experimental fact) |
 
 ## Flagship cell: U373-02-T7
 ![flagship](../results/phase5_flagship_cell.png)
 
-- **[observed_in_image]** Cell tracked for 115 frames (28.5 h). (confidence 0.783)
-- **[observed_in_image]** Net displacement 175.9 um, path length 330.7 um, mean speed 0.193 um/min, directionality 0.53. (confidence 0.783)
-- **[observed_in_image]** Segmented in every tracked frame; mean cell probability 0.932. (confidence 0.932)
+- **[observed_directly_in_image]** Cell tracked for 115 frames (28.5 h). (confidence 0.783)
+- **[observed_directly_in_image]** Net displacement 175.9 um, path length 330.7 um, mean speed 0.193 um/min, directionality 0.53. (confidence 0.783)
+- **[observed_directly_in_image]** Segmented in every tracked frame; mean cell probability 0.932. (confidence 0.932)
 - **[inferred_by_model]** Phenotype: migrating (rule R-MIG: net displacement >= 1.0 cell diameter over >= 20 frames). (confidence 0.99)
 - **[supported_by_literature]** CXCR4 is the predominant chemokine receptor on human glioma cell lines (13 of 16 lines) and its ligand SDF-1/CXCL12 induces glioma cell chemotaxis. [Zhou Y, Larsen PH, Hao C, Yong VW. CXCR4 is a major chemokine receptor on glioma cells and mediates their survival. J Biol Chem. 2002;277(51):49481-7. PMID 12388552]
 - **[supported_by_literature]** Invasive glioma cell populations overexpress CXCR4, blocking CXCR4 impairs their in vitro invasion, and glioma cells invade toward a CXCL12 gradient. [Ehtesham M, Winston JA, Kabos P, Thompson RC. CXCR4 expression mediates glioma cell invasiveness. Oncogene. 2006;25(19):2801-6. PMID 16407848]
@@ -52,7 +52,7 @@ read from the Phase 1-2 benchmark outputs.
 
 ### tracking
 - **Model:** BioLayers overlap tracker (Hungarian assignment on mask IoU + gap/flicker clean-up)
-- **Version:** code 52ffb95
+- **Version:** code 73984e8
 - **Confidence:** per track: mean IoU between the cell's masks in consecutive frames
 - **Dataset:** CTC PhC-C2DH-U373, training sequences 01 and 02 (230 frames)
 - **Evaluation metric:** `{"seq01": {"link accuracy": 0.9987, "identity switches": 1, "detection precision": 0.928, "detection recall": 0.999}, "seq02": {"link accuracy": 0.9955, "identity switches": 3, "detection precision": 0.857, "detection recall": 0.987}}`
@@ -63,7 +63,7 @@ read from the Phase 1-2 benchmark outputs.
 
 ### phenotype_rules
 - **Model:** Rule-based phenotype classifier (transparent thresholds, not a learned model)
-- **Version:** rules 0.1.0, code 52ffb95
+- **Version:** rules 0.1.0, code 73984e8
 - **Confidence:** per label: rule margin, the deciding feature's distance from its threshold mapped to 0.5-0.99 (not a probability)
 - **Dataset:** no labelled phenotype data exists for these classes; thresholds set from cell-size units, not fitted to data
 - **Evaluation metric:** `{"motility label agreement, rule applied to ground-truth vs our trajectories": "10/14 tracks", "note": "checks that tracking errors do not change the label; it does not validate the biology"}`

@@ -36,13 +36,13 @@
         [
           "tracking",
           "BioLayers overlap tracker (Hungarian assignment on mask IoU + gap/flicker clean-up)",
-          "code 52ffb95",
+          "code 73984e8",
           "per track: mean IoU between the cell's masks in consecutive frames"
         ],
         [
           "phenotype rules",
           "Rule-based phenotype classifier (transparent thresholds, not a learned model)",
-          "rules 0.1.0, code 52ffb95",
+          "rules 0.1.0, code 73984e8",
           "per label: rule margin, the deciding feature's distance from its threshold mapped to 0.5-0.99 (not a probability)"
         ],
         [
@@ -218,7 +218,7 @@
       ],
       "rows": [
         [
-          "`observed_in_image`",
+          "`observed_directly_in_image`",
           "Observed directly in the image (measured from segmented pixels)"
         ],
         [

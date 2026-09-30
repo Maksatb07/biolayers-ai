@@ -21,7 +21,7 @@
     "cut by image edge": "#6e6e6e"
   },
   "evidence_levels": {
-    "observed_in_image": "Observed directly in the image (measured from segmented pixels)",
+    "observed_directly_in_image": "Observed directly in the image (measured from segmented pixels)",
     "supported_by_literature": "Supported by published literature (not observed in this image)",
     "inferred_by_model": "Inferred by a model or rule (not an experimental fact)"
   },
@@ -48,7 +48,7 @@
     },
     "tracking": {
       "model": "BioLayers overlap tracker (Hungarian assignment on mask IoU + gap/flicker clean-up)",
-      "version": "code 52ffb95",
+      "version": "code 73984e8",
       "confidence": "per track: mean IoU between the cell's masks in consecutive frames",
       "dataset": "CTC PhC-C2DH-U373, training sequences 01 and 02 (230 frames)",
       "evaluation_metric": {
@@ -73,7 +73,7 @@
     },
     "phenotype_rules": {
       "model": "Rule-based phenotype classifier (transparent thresholds, not a learned model)",
-      "version": "rules 0.1.0, code 52ffb95",
+      "version": "rules 0.1.0, code 73984e8",
       "confidence": "per label: rule margin, the deciding feature's distance from its threshold mapped to 0.5-0.99 (not a probability)",
       "dataset": "no labelled phenotype data exists for these classes; thresholds set from cell-size units, not fitted to data",
       "evaluation_metric": {
@@ -370,7 +370,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 384,
         "perimeter_px": 71.1,
         "circularity": 0.954,
@@ -382,7 +382,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 384 px, circularity 0.95, solidity 0.97, mean intensity 532.",
           "source": "segmentation",
           "confidence": 0.956
@@ -743,7 +743,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 517,
         "perimeter_px": 92.2,
         "circularity": 0.765,
@@ -755,7 +755,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 517 px, circularity 0.76, solidity 0.90, mean intensity 495.",
           "source": "segmentation",
           "confidence": 0.95
@@ -1064,7 +1064,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 392,
         "perimeter_px": 74.6,
         "circularity": 0.885,
@@ -1076,7 +1076,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 392 px, circularity 0.88, solidity 0.97, mean intensity 414.",
           "source": "segmentation",
           "confidence": 0.952
@@ -1429,7 +1429,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 588,
         "perimeter_px": 92.7,
         "circularity": 0.86,
@@ -1441,7 +1441,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 588 px, circularity 0.86, solidity 0.95, mean intensity 417.",
           "source": "segmentation",
           "confidence": 0.959
@@ -1802,7 +1802,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 572,
         "perimeter_px": 92.2,
         "circularity": 0.846,
@@ -1814,7 +1814,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 572 px, circularity 0.85, solidity 0.97, mean intensity 333.",
           "source": "segmentation",
           "confidence": 0.942
@@ -1995,7 +1995,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 110,
         "perimeter_px": 41.0,
         "circularity": 0.823,
@@ -2007,7 +2007,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 110 px, circularity 0.82, solidity 0.98, mean intensity 344.",
           "source": "segmentation",
           "confidence": 0.849
@@ -2372,7 +2372,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 485,
         "perimeter_px": 88.6,
         "circularity": 0.776,
@@ -2384,7 +2384,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 485 px, circularity 0.78, solidity 0.96, mean intensity 300.",
           "source": "segmentation",
           "confidence": 0.927
@@ -2585,7 +2585,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 99,
         "perimeter_px": 44.7,
         "circularity": 0.622,
@@ -2597,7 +2597,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 99 px, circularity 0.62, solidity 0.96, mean intensity 339.",
           "source": "segmentation",
           "confidence": 0.824
@@ -2834,7 +2834,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 186,
         "perimeter_px": 55.8,
         "circularity": 0.751,
@@ -2846,7 +2846,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 186 px, circularity 0.75, solidity 0.97, mean intensity 290.",
           "source": "segmentation",
           "confidence": 0.888
@@ -3231,7 +3231,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 753,
         "perimeter_px": 100.7,
         "circularity": 0.934,
@@ -3243,7 +3243,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 753 px, circularity 0.93, solidity 0.98, mean intensity 614.",
           "source": "segmentation",
           "confidence": 0.965
@@ -3692,7 +3692,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 922,
         "perimeter_px": 120.0,
         "circularity": 0.805,
@@ -3704,7 +3704,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 922 px, circularity 0.80, solidity 0.95, mean intensity 579.",
           "source": "segmentation",
           "confidence": 0.962
@@ -4017,7 +4017,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 434,
         "perimeter_px": 78.5,
         "circularity": 0.884,
@@ -4029,7 +4029,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 434 px, circularity 0.88, solidity 0.96, mean intensity 540.",
           "source": "segmentation",
           "confidence": 0.951
@@ -4442,7 +4442,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 719,
         "perimeter_px": 112.2,
         "circularity": 0.717,
@@ -4454,7 +4454,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 719 px, circularity 0.72, solidity 0.91, mean intensity 395.",
           "source": "segmentation",
           "confidence": 0.957
@@ -5008,7 +5008,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 1287,
         "perimeter_px": 149.3,
         "circularity": 0.726,
@@ -5020,7 +5020,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 1287 px, circularity 0.73, solidity 0.90, mean intensity 688.",
           "source": "segmentation",
           "confidence": 0.969
@@ -5398,7 +5398,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 654,
         "perimeter_px": 98.7,
         "circularity": 0.844,
@@ -5410,7 +5410,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 654 px, circularity 0.84, solidity 0.95, mean intensity 688.",
           "source": "segmentation",
           "confidence": 0.968
@@ -5627,7 +5627,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 172,
         "perimeter_px": 50.4,
         "circularity": 0.851,
@@ -5639,7 +5639,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 172 px, circularity 0.85, solidity 0.97, mean intensity 605.",
           "source": "segmentation",
           "confidence": 0.918
@@ -5972,7 +5972,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 475,
         "perimeter_px": 88.9,
         "circularity": 0.755,
@@ -5984,7 +5984,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 475 px, circularity 0.76, solidity 0.94, mean intensity 618.",
           "source": "segmentation",
           "confidence": 0.952
@@ -6249,7 +6249,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 311,
         "perimeter_px": 68.2,
         "circularity": 0.841,
@@ -6261,7 +6261,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 311 px, circularity 0.84, solidity 0.95, mean intensity 712.",
           "source": "segmentation",
           "confidence": 0.946
@@ -6670,7 +6670,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 829,
         "perimeter_px": 112.5,
         "circularity": 0.824,
@@ -6682,7 +6682,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 829 px, circularity 0.82, solidity 0.97, mean intensity 687.",
           "source": "segmentation",
           "confidence": 0.967
@@ -6959,7 +6959,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 308,
         "perimeter_px": 67.5,
         "circularity": 0.851,
@@ -6971,7 +6971,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 308 px, circularity 0.85, solidity 0.97, mean intensity 629.",
           "source": "segmentation",
           "confidence": 0.938
@@ -7424,7 +7424,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 902,
         "perimeter_px": 124.7,
         "circularity": 0.729,
@@ -7436,7 +7436,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 902 px, circularity 0.73, solidity 0.94, mean intensity 565.",
           "source": "segmentation",
           "confidence": 0.971
@@ -7753,7 +7753,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 500,
         "perimeter_px": 81.6,
         "circularity": 0.944,
@@ -7765,7 +7765,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 500 px, circularity 0.94, solidity 0.97, mean intensity 485.",
           "source": "segmentation",
           "confidence": 0.965
@@ -8218,7 +8218,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 978,
         "perimeter_px": 118.9,
         "circularity": 0.869,
@@ -8230,7 +8230,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 978 px, circularity 0.87, solidity 0.98, mean intensity 571.",
           "source": "segmentation",
           "confidence": 0.972
@@ -8467,7 +8467,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 254,
         "perimeter_px": 58.3,
         "circularity": 0.94,
@@ -8479,7 +8479,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 254 px, circularity 0.94, solidity 0.95, mean intensity 892.",
           "source": "segmentation",
           "confidence": 0.93
@@ -8797,7 +8797,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 468,
         "perimeter_px": 82.4,
         "circularity": 0.866,
@@ -8809,7 +8809,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 468 px, circularity 0.87, solidity 0.97, mean intensity 691.",
           "source": "segmentation",
           "confidence": 0.963
@@ -9174,7 +9174,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 650,
         "perimeter_px": 95.3,
         "circularity": 0.9,
@@ -9186,7 +9186,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 650 px, circularity 0.90, solidity 0.97, mean intensity 745.",
           "source": "segmentation",
           "confidence": 0.97
@@ -9567,7 +9567,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 621,
         "perimeter_px": 104.2,
         "circularity": 0.718,
@@ -9579,7 +9579,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 621 px, circularity 0.72, solidity 0.96, mean intensity 456.",
           "source": "segmentation",
           "confidence": 0.962
@@ -10036,7 +10036,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 926,
         "perimeter_px": 121.2,
         "circularity": 0.793,
@@ -10048,7 +10048,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 926 px, circularity 0.79, solidity 0.95, mean intensity 796.",
           "source": "segmentation",
           "confidence": 0.976
@@ -10429,7 +10429,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 608,
         "perimeter_px": 98.4,
         "circularity": 0.789,
@@ -10441,7 +10441,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 608 px, circularity 0.79, solidity 0.96, mean intensity 518.",
           "source": "segmentation",
           "confidence": 0.959
@@ -10838,7 +10838,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 563,
         "perimeter_px": 107.4,
         "circularity": 0.613,
@@ -10850,7 +10850,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 563 px, circularity 0.61, solidity 0.81, mean intensity 509.",
           "source": "segmentation",
           "confidence": 0.958
@@ -11060,7 +11060,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 119,
         "perimeter_px": 47.6,
         "circularity": 0.661,
@@ -11072,7 +11072,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 119 px, circularity 0.66, solidity 0.97, mean intensity 687.",
           "source": "segmentation",
           "confidence": 0.886
@@ -11457,7 +11457,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 689,
         "perimeter_px": 102.3,
         "circularity": 0.827,
@@ -11469,7 +11469,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 689 px, circularity 0.83, solidity 0.97, mean intensity 674.",
           "source": "segmentation",
           "confidence": 0.963
@@ -11826,7 +11826,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 631,
         "perimeter_px": 93.3,
         "circularity": 0.912,
@@ -11838,7 +11838,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 631 px, circularity 0.91, solidity 0.97, mean intensity 536.",
           "source": "segmentation",
           "confidence": 0.963
@@ -12219,7 +12219,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 654,
         "perimeter_px": 97.6,
         "circularity": 0.863,
@@ -12231,7 +12231,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 654 px, circularity 0.86, solidity 0.96, mean intensity 486.",
           "source": "segmentation",
           "confidence": 0.96
@@ -12580,7 +12580,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 500,
         "perimeter_px": 88.8,
         "circularity": 0.797,
@@ -12592,7 +12592,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 500 px, circularity 0.80, solidity 0.96, mean intensity 683.",
           "source": "segmentation",
           "confidence": 0.97
@@ -12829,7 +12829,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 201,
         "perimeter_px": 59.1,
         "circularity": 0.723,
@@ -12841,7 +12841,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 201 px, circularity 0.72, solidity 0.92, mean intensity 2495.",
           "source": "segmentation",
           "confidence": 0.721
@@ -13183,7 +13183,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 583,
         "perimeter_px": 89.3,
         "circularity": 0.92,
@@ -13195,7 +13195,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 583 px, circularity 0.92, solidity 0.97, mean intensity 865.",
           "source": "segmentation",
           "confidence": 0.957
@@ -13624,7 +13624,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 825,
         "perimeter_px": 111.3,
         "circularity": 0.838,
@@ -13636,7 +13636,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 825 px, circularity 0.84, solidity 0.97, mean intensity 648.",
           "source": "segmentation",
           "confidence": 0.969
@@ -14113,7 +14113,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 948,
         "perimeter_px": 128.2,
         "circularity": 0.725,
@@ -14125,7 +14125,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 948 px, circularity 0.72, solidity 0.97, mean intensity 602.",
           "source": "segmentation",
           "confidence": 0.968
@@ -14530,7 +14530,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 810,
         "perimeter_px": 106.1,
         "circularity": 0.904,
@@ -14542,7 +14542,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 810 px, circularity 0.90, solidity 0.97, mean intensity 617.",
           "source": "segmentation",
           "confidence": 0.968
@@ -14939,7 +14939,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 679,
         "perimeter_px": 109.1,
         "circularity": 0.717,
@@ -14951,7 +14951,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 679 px, circularity 0.72, solidity 0.94, mean intensity 510.",
           "source": "segmentation",
           "confidence": 0.96
@@ -15296,7 +15296,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 557,
         "perimeter_px": 89.8,
         "circularity": 0.867,
@@ -15308,7 +15308,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 557 px, circularity 0.87, solidity 0.96, mean intensity 600.",
           "source": "segmentation",
           "confidence": 0.96
@@ -15733,7 +15733,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 867,
         "perimeter_px": 114.0,
         "circularity": 0.839,
@@ -15745,7 +15745,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 867 px, circularity 0.84, solidity 0.95, mean intensity 528.",
           "source": "segmentation",
           "confidence": 0.968
@@ -16246,7 +16246,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 1170,
         "perimeter_px": 131.7,
         "circularity": 0.847,
@@ -16258,7 +16258,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 1170 px, circularity 0.85, solidity 0.98, mean intensity 910.",
           "source": "segmentation",
           "confidence": 0.971
@@ -16711,7 +16711,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 937,
         "perimeter_px": 123.1,
         "circularity": 0.778,
@@ -16723,7 +16723,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 937 px, circularity 0.78, solidity 0.95, mean intensity 1018.",
           "source": "segmentation",
           "confidence": 0.97
@@ -17136,7 +17136,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 779,
         "perimeter_px": 108.1,
         "circularity": 0.838,
@@ -17148,7 +17148,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 779 px, circularity 0.84, solidity 0.96, mean intensity 670.",
           "source": "segmentation",
           "confidence": 0.968
@@ -17533,7 +17533,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 663,
         "perimeter_px": 99.8,
         "circularity": 0.836,
@@ -17545,7 +17545,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 663 px, circularity 0.84, solidity 0.97, mean intensity 477.",
           "source": "segmentation",
           "confidence": 0.965
@@ -17958,7 +17958,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 824,
         "perimeter_px": 108.9,
         "circularity": 0.873,
@@ -17970,7 +17970,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 824 px, circularity 0.87, solidity 0.97, mean intensity 467.",
           "source": "segmentation",
           "confidence": 0.965
@@ -18235,7 +18235,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 171,
         "perimeter_px": 60.3,
         "circularity": 0.59,
@@ -18247,7 +18247,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 171 px, circularity 0.59, solidity 0.97, mean intensity 572.",
           "source": "segmentation",
           "confidence": 0.906
@@ -18644,7 +18644,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 672,
         "perimeter_px": 101.6,
         "circularity": 0.818,
@@ -18656,7 +18656,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 672 px, circularity 0.82, solidity 0.97, mean intensity 747.",
           "source": "segmentation",
           "confidence": 0.961
@@ -19045,7 +19045,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 744,
         "perimeter_px": 103.3,
         "circularity": 0.876,
@@ -19057,7 +19057,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 744 px, circularity 0.88, solidity 0.96, mean intensity 543.",
           "source": "segmentation",
           "confidence": 0.967
@@ -19522,7 +19522,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 982,
         "perimeter_px": 124.0,
         "circularity": 0.803,
@@ -19534,7 +19534,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 982 px, circularity 0.80, solidity 0.97, mean intensity 652.",
           "source": "segmentation",
           "confidence": 0.969
@@ -19927,7 +19927,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 688,
         "perimeter_px": 103.5,
         "circularity": 0.807,
@@ -19939,7 +19939,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 688 px, circularity 0.81, solidity 0.96, mean intensity 470.",
           "source": "segmentation",
           "confidence": 0.964
@@ -20356,7 +20356,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 809,
         "perimeter_px": 107.8,
         "circularity": 0.874,
@@ -20368,7 +20368,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 809 px, circularity 0.87, solidity 0.97, mean intensity 618.",
           "source": "segmentation",
           "confidence": 0.972
@@ -20813,7 +20813,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 859,
         "perimeter_px": 116.9,
         "circularity": 0.79,
@@ -20825,7 +20825,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 859 px, circularity 0.79, solidity 0.97, mean intensity 658.",
           "source": "segmentation",
           "confidence": 0.963
@@ -21198,7 +21198,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 613,
         "perimeter_px": 100.6,
         "circularity": 0.762,
@@ -21210,7 +21210,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 613 px, circularity 0.76, solidity 0.96, mean intensity 509.",
           "source": "segmentation",
           "confidence": 0.96
@@ -21611,7 +21611,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 806,
         "perimeter_px": 106.3,
         "circularity": 0.896,
@@ -21623,7 +21623,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 806 px, circularity 0.90, solidity 0.97, mean intensity 459.",
           "source": "segmentation",
           "confidence": 0.967
@@ -22000,7 +22000,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 713,
         "perimeter_px": 100.3,
         "circularity": 0.89,
@@ -22012,7 +22012,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 713 px, circularity 0.89, solidity 0.96, mean intensity 475.",
           "source": "segmentation",
           "confidence": 0.962
@@ -22345,7 +22345,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 550,
         "perimeter_px": 89.7,
         "circularity": 0.858,
@@ -22357,7 +22357,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 550 px, circularity 0.86, solidity 0.96, mean intensity 544.",
           "source": "segmentation",
           "confidence": 0.963
@@ -22754,7 +22754,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 728,
         "perimeter_px": 104.9,
         "circularity": 0.831,
@@ -22766,7 +22766,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 728 px, circularity 0.83, solidity 0.96, mean intensity 573.",
           "source": "segmentation",
           "confidence": 0.961
@@ -23183,7 +23183,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 768,
         "perimeter_px": 107.0,
         "circularity": 0.843,
@@ -23195,7 +23195,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 768 px, circularity 0.84, solidity 0.96, mean intensity 774.",
           "source": "segmentation",
           "confidence": 0.968
@@ -23552,7 +23552,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 534,
         "perimeter_px": 91.6,
         "circularity": 0.8,
@@ -23564,7 +23564,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 534 px, circularity 0.80, solidity 0.96, mean intensity 596.",
           "source": "segmentation",
           "confidence": 0.959
@@ -23929,7 +23929,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 720,
         "perimeter_px": 98.6,
         "circularity": 0.931,
@@ -23941,7 +23941,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 720 px, circularity 0.93, solidity 0.98, mean intensity 475.",
           "source": "segmentation",
           "confidence": 0.965
@@ -24302,7 +24302,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 605,
         "perimeter_px": 93.0,
         "circularity": 0.879,
@@ -24314,7 +24314,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 605 px, circularity 0.88, solidity 0.96, mean intensity 618.",
           "source": "segmentation",
           "confidence": 0.973
@@ -24675,7 +24675,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 668,
         "perimeter_px": 97.2,
         "circularity": 0.889,
@@ -24687,7 +24687,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 668 px, circularity 0.89, solidity 0.97, mean intensity 478.",
           "source": "segmentation",
           "confidence": 0.962
@@ -25056,7 +25056,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 705,
         "perimeter_px": 99.2,
         "circularity": 0.901,
@@ -25068,7 +25068,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 705 px, circularity 0.90, solidity 0.97, mean intensity 481.",
           "source": "segmentation",
           "confidence": 0.963
@@ -25449,7 +25449,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 551,
         "perimeter_px": 97.6,
         "circularity": 0.727,
@@ -25461,7 +25461,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 551 px, circularity 0.73, solidity 0.95, mean intensity 543.",
           "source": "segmentation",
           "confidence": 0.962
@@ -25906,7 +25906,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 1055,
         "perimeter_px": 120.2,
         "circularity": 0.917,
@@ -25918,7 +25918,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 1055 px, circularity 0.92, solidity 0.98, mean intensity 579.",
           "source": "segmentation",
           "confidence": 0.971
@@ -26287,7 +26287,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 623,
         "perimeter_px": 94.2,
         "circularity": 0.883,
@@ -26299,7 +26299,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 623 px, circularity 0.88, solidity 0.96, mean intensity 613.",
           "source": "segmentation",
           "confidence": 0.964
@@ -26624,7 +26624,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 456,
         "perimeter_px": 81.9,
         "circularity": 0.853,
@@ -26636,7 +26636,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 456 px, circularity 0.85, solidity 0.96, mean intensity 733.",
           "source": "segmentation",
           "confidence": 0.967
@@ -27121,7 +27121,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 1179,
         "perimeter_px": 132.7,
         "circularity": 0.841,
@@ -27133,7 +27133,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 1179 px, circularity 0.84, solidity 0.97, mean intensity 909.",
           "source": "segmentation",
           "confidence": 0.977
@@ -27538,7 +27538,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 782,
         "perimeter_px": 106.1,
         "circularity": 0.873,
@@ -27550,7 +27550,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 782 px, circularity 0.87, solidity 0.97, mean intensity 687.",
           "source": "segmentation",
           "confidence": 0.969
@@ -27919,7 +27919,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 644,
         "perimeter_px": 96.7,
         "circularity": 0.866,
@@ -27931,7 +27931,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 644 px, circularity 0.87, solidity 0.96, mean intensity 488.",
           "source": "segmentation",
           "confidence": 0.966
@@ -28200,7 +28200,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 213,
         "perimeter_px": 63.8,
         "circularity": 0.658,
@@ -28212,7 +28212,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 213 px, circularity 0.66, solidity 0.97, mean intensity 825.",
           "source": "segmentation",
           "confidence": 0.921
@@ -28725,7 +28725,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 1231,
         "perimeter_px": 140.1,
         "circularity": 0.788,
@@ -28737,7 +28737,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 1231 px, circularity 0.79, solidity 0.97, mean intensity 551.",
           "source": "segmentation",
           "confidence": 0.972
@@ -28822,7 +28822,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 18,
         "perimeter_px": 13.7,
         "circularity": 1.0,
@@ -28834,7 +28834,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 18 px, circularity 1.00, solidity 0.86, mean intensity 440.",
           "source": "segmentation",
           "confidence": 0.793
@@ -29172,7 +29172,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 553,
         "perimeter_px": 89.5,
         "circularity": 0.868,
@@ -29184,7 +29184,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 553 px, circularity 0.87, solidity 0.95, mean intensity 547.",
           "source": "segmentation",
           "confidence": 0.958
@@ -29609,7 +29609,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 848,
         "perimeter_px": 112.3,
         "circularity": 0.845,
@@ -29621,7 +29621,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 848 px, circularity 0.84, solidity 0.96, mean intensity 575.",
           "source": "segmentation",
           "confidence": 0.972
@@ -30082,7 +30082,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 889,
         "perimeter_px": 119.3,
         "circularity": 0.786,
@@ -30094,7 +30094,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 889 px, circularity 0.79, solidity 0.97, mean intensity 616.",
           "source": "segmentation",
           "confidence": 0.97
@@ -30427,7 +30427,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 566,
         "perimeter_px": 87.3,
         "circularity": 0.934,
@@ -30439,7 +30439,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 566 px, circularity 0.93, solidity 0.97, mean intensity 614.",
           "source": "segmentation",
           "confidence": 0.966
@@ -30832,7 +30832,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 708,
         "perimeter_px": 102.7,
         "circularity": 0.844,
@@ -30844,7 +30844,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 708 px, circularity 0.84, solidity 0.97, mean intensity 473.",
           "source": "segmentation",
           "confidence": 0.969
@@ -31217,7 +31217,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 625,
         "perimeter_px": 97.3,
         "circularity": 0.83,
@@ -31229,7 +31229,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 625 px, circularity 0.83, solidity 0.93, mean intensity 495.",
           "source": "segmentation",
           "confidence": 0.958
@@ -31618,7 +31618,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 671,
         "perimeter_px": 100.4,
         "circularity": 0.836,
@@ -31630,7 +31630,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 671 px, circularity 0.84, solidity 0.97, mean intensity 534.",
           "source": "segmentation",
           "confidence": 0.964
@@ -32131,7 +32131,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 1285,
         "perimeter_px": 135.1,
         "circularity": 0.885,
@@ -32143,7 +32143,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 1285 px, circularity 0.89, solidity 0.97, mean intensity 526.",
           "source": "segmentation",
           "confidence": 0.974
@@ -32484,7 +32484,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 536,
         "perimeter_px": 88.4,
         "circularity": 0.861,
@@ -32496,7 +32496,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 536 px, circularity 0.86, solidity 0.97, mean intensity 578.",
           "source": "segmentation",
           "confidence": 0.964
@@ -32957,7 +32957,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 751,
         "perimeter_px": 118.4,
         "circularity": 0.673,
@@ -32969,7 +32969,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 751 px, circularity 0.67, solidity 0.96, mean intensity 474.",
           "source": "segmentation",
           "confidence": 0.966
@@ -33378,7 +33378,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 774,
         "perimeter_px": 107.5,
         "circularity": 0.842,
@@ -33390,7 +33390,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 774 px, circularity 0.84, solidity 0.96, mean intensity 594.",
           "source": "segmentation",
           "confidence": 0.972
@@ -33847,7 +33847,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 899,
         "perimeter_px": 119.5,
         "circularity": 0.791,
@@ -33859,7 +33859,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 899 px, circularity 0.79, solidity 0.97, mean intensity 617.",
           "source": "segmentation",
           "confidence": 0.971
@@ -34300,7 +34300,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 1040,
         "perimeter_px": 120.5,
         "circularity": 0.901,
@@ -34312,7 +34312,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 1040 px, circularity 0.90, solidity 0.97, mean intensity 589.",
           "source": "segmentation",
           "confidence": 0.972
@@ -34777,7 +34777,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 1025,
         "perimeter_px": 125.6,
         "circularity": 0.816,
@@ -34789,7 +34789,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 1025 px, circularity 0.82, solidity 0.95, mean intensity 969.",
           "source": "segmentation",
           "confidence": 0.971
@@ -35206,7 +35206,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 805,
         "perimeter_px": 108.7,
         "circularity": 0.857,
@@ -35218,7 +35218,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 805 px, circularity 0.86, solidity 0.98, mean intensity 612.",
           "source": "segmentation",
           "confidence": 0.972
@@ -35711,7 +35711,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 1325,
         "perimeter_px": 133.9,
         "circularity": 0.929,
@@ -35723,7 +35723,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 1325 px, circularity 0.93, solidity 0.98, mean intensity 511.",
           "source": "segmentation",
           "confidence": 0.976
@@ -36048,7 +36048,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 478,
         "perimeter_px": 83.6,
         "circularity": 0.86,
@@ -36060,7 +36060,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 478 px, circularity 0.86, solidity 0.96, mean intensity 586.",
           "source": "segmentation",
           "confidence": 0.958
@@ -36473,7 +36473,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 749,
         "perimeter_px": 105.6,
         "circularity": 0.844,
@@ -36485,7 +36485,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 749 px, circularity 0.84, solidity 0.98, mean intensity 531.",
           "source": "segmentation",
           "confidence": 0.968
@@ -36826,7 +36826,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 520,
         "perimeter_px": 90.9,
         "circularity": 0.791,
@@ -36838,7 +36838,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 520 px, circularity 0.79, solidity 0.97, mean intensity 540.",
           "source": "segmentation",
           "confidence": 0.957
@@ -37255,7 +37255,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 832,
         "perimeter_px": 107.8,
         "circularity": 0.899,
@@ -37267,7 +37267,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 832 px, circularity 0.90, solidity 0.97, mean intensity 443.",
           "source": "segmentation",
           "confidence": 0.969
@@ -37672,7 +37672,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 827,
         "perimeter_px": 105.3,
         "circularity": 0.938,
@@ -37684,7 +37684,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 827 px, circularity 0.94, solidity 0.98, mean intensity 667.",
           "source": "segmentation",
           "confidence": 0.974
@@ -38045,7 +38045,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 563,
         "perimeter_px": 92.2,
         "circularity": 0.833,
@@ -38057,7 +38057,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 563 px, circularity 0.83, solidity 0.95, mean intensity 528.",
           "source": "segmentation",
           "confidence": 0.964
@@ -38414,7 +38414,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 544,
         "perimeter_px": 91.6,
         "circularity": 0.815,
@@ -38426,7 +38426,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 544 px, circularity 0.81, solidity 0.94, mean intensity 534.",
           "source": "segmentation",
           "confidence": 0.962
@@ -38867,7 +38867,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 819,
         "perimeter_px": 118.8,
         "circularity": 0.729,
@@ -38879,7 +38879,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 819 px, circularity 0.73, solidity 0.97, mean intensity 658.",
           "source": "segmentation",
           "confidence": 0.97
@@ -39316,7 +39316,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 974,
         "perimeter_px": 119.1,
         "circularity": 0.864,
@@ -39328,7 +39328,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 974 px, circularity 0.86, solidity 0.97, mean intensity 587.",
           "source": "segmentation",
           "confidence": 0.973
@@ -39657,7 +39657,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 502,
         "perimeter_px": 85.8,
         "circularity": 0.856,
@@ -39669,7 +39669,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 502 px, circularity 0.86, solidity 0.96, mean intensity 557.",
           "source": "segmentation",
           "confidence": 0.958
@@ -40050,7 +40050,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 702,
         "perimeter_px": 102.6,
         "circularity": 0.839,
@@ -40062,7 +40062,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 702 px, circularity 0.84, solidity 0.97, mean intensity 452.",
           "source": "segmentation",
           "confidence": 0.967
@@ -40331,7 +40331,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 256,
         "perimeter_px": 64.6,
         "circularity": 0.77,
@@ -40343,7 +40343,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 256 px, circularity 0.77, solidity 0.96, mean intensity 584.",
           "source": "segmentation",
           "confidence": 0.943
@@ -40616,7 +40616,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 276,
         "perimeter_px": 66.0,
         "circularity": 0.795,
@@ -40628,7 +40628,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 276 px, circularity 0.80, solidity 0.97, mean intensity 663.",
           "source": "segmentation",
           "confidence": 0.945
@@ -40965,7 +40965,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 454,
         "perimeter_px": 82.9,
         "circularity": 0.831,
@@ -40977,7 +40977,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 454 px, circularity 0.83, solidity 0.95, mean intensity 519.",
           "source": "segmentation",
           "confidence": 0.958
@@ -41202,7 +41202,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 183,
         "perimeter_px": 54.0,
         "circularity": 0.787,
@@ -41214,7 +41214,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 183 px, circularity 0.79, solidity 0.96, mean intensity 336.",
           "source": "segmentation",
           "confidence": 0.893
@@ -41391,7 +41391,7 @@
         }
       ],
       "metrics": {
-        "level": "observed_in_image",
+        "level": "observed_directly_in_image",
         "area_px": 94,
         "perimeter_px": 38.7,
         "circularity": 0.788,
@@ -41403,7 +41403,7 @@
       },
       "observations": [
         {
-          "level": "observed_in_image",
+          "level": "observed_directly_in_image",
           "statement": "Area 94 px, circularity 0.79, solidity 0.95, mean intensity 371.",
           "source": "segmentation",
           "confidence": 0.869

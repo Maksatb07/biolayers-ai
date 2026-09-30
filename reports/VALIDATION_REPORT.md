@@ -10,8 +10,8 @@ BioLayers AI takes a microscopy image or time-lapse, finds and outlines the cell
 | Component | Model | Version | Confidence reported |
 |---|---|---|---|
 | segmentation | Cellpose, pretrained cpsam_v2 weights (zero-shot, no fine-tuning) | cellpose 4.2.1.1 | per cell: mean Cellpose cell probability inside the mask (uncalibrated, tends to saturate near 0.95-0.97) |
-| tracking | BioLayers overlap tracker (Hungarian assignment on mask IoU + gap/flicker clean-up) | code 52ffb95 | per track: mean IoU between the cell's masks in consecutive frames |
-| phenotype rules | Rule-based phenotype classifier (transparent thresholds, not a learned model) | rules 0.1.0, code 52ffb95 | per label: rule margin, the deciding feature's distance from its threshold mapped to 0.5-0.99 (not a probability) |
+| tracking | BioLayers overlap tracker (Hungarian assignment on mask IoU + gap/flicker clean-up) | code 73984e8 | per track: mean IoU between the cell's masks in consecutive frames |
+| phenotype rules | Rule-based phenotype classifier (transparent thresholds, not a learned model) | rules 0.1.0, code 73984e8 | per label: rule margin, the deciding feature's distance from its threshold mapped to 0.5-0.99 (not a probability) |
 | literature linker | Curated knowledge base, manual curation (no text mining, no language model) | knowledge base 0.2.0 (2026-09-30) | not scored: each link cites the PubMed-verified paper it rests on |
 
 
@@ -54,7 +54,7 @@ Every statement the system makes carries exactly one level. They are never prese
 
 | Level | Meaning |
 |---|---|
-| `observed_in_image` | Observed directly in the image (measured from segmented pixels) |
+| `observed_directly_in_image` | Observed directly in the image (measured from segmented pixels) |
 | `supported_by_literature` | Supported by published literature (not observed in this image) |
 | `inferred_by_model` | Inferred by a model or rule (not an experimental fact) |
 
