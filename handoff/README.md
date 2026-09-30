@@ -64,7 +64,7 @@ the original image. `bbox` is `[x0, y0, x1, y1]`. `*_um` fields are micrometres.
 
       // machine-readable, for charts and tables
       "labels":  [ { "label": "migrating", "rule": "R-MIG", "confidence": 0.99, "level": "inferred_by_model" } ],
-      "metrics": { "level": "observed_in_image",
+      "metrics": { "level": "observed_directly_in_image",
                    "n_frames", "duration_h", "net_displacement_um", "path_length_um",
                    "mean_speed_um_per_min", "directionality",
                    "median_area_px", "median_area_um2", "median_circularity",
@@ -88,7 +88,7 @@ A **statement** is:
 
 ```
 {
-  "level": "observed_in_image" | "supported_by_literature" | "inferred_by_model",
+  "level": "observed_directly_in_image" | "supported_by_literature" | "inferred_by_model",
   "statement": "human-readable sentence",
   "source": "<key into model_cards>",
   "confidence": number or null,        // meaning depends on source, see model_cards[source].confidence

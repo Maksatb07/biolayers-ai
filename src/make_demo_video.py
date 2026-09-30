@@ -28,7 +28,7 @@ UM_PER_PX, MIN_PER_FRAME = 0.65, 15
 
 BG, INK, MUTED, LINE = (15, 20, 25), (232, 236, 240), (150, 160, 172), (48, 56, 66)
 GREEN, BLUE, ORANGE, RED, GREY = (102, 187, 106), (100, 170, 245), (255, 152, 60), (239, 83, 80), (170, 170, 170)
-LEVEL = {"observed_in_image": ("OBSERVED IN IMAGE", GREEN), "supported_by_literature": ("SUPPORTED BY LITERATURE", BLUE),
+LEVEL = {"observed_directly_in_image": ("OBSERVED IN IMAGE", GREEN), "supported_by_literature": ("SUPPORTED BY LITERATURE", BLUE),
          "inferred_by_model": ("INFERRED BY MODEL", ORANGE)}
 LABEL_RGB = {"migrating": ORANGE, "quiescent": BLUE, "indeterminate": GREY, "apoptotic/dead": RED}
 STEPS = ["Segment", "Track", "Measure", "Classify", "Link"]
@@ -136,7 +136,7 @@ def scene_segmentation(p1):
             d.text((x, y), f"{n}", font=F["num"], fill=INK)
             d.text((x + d.textlength(f"{n}", font=F["num"]) + 12, y + 14), "nuclei found in this image",
                    font=F["small"], fill=MUTED)
-            y = tag(d, (x, y + 56), "observed_in_image")
+            y = tag(d, (x, y + 56), "observed_directly_in_image")
         if a >= 1:
             y += 8
             d.text((x, y), f"Benchmark: {len(p1)} hand-annotated images", font=F["smallb"], fill=INK)
@@ -209,7 +209,7 @@ def scene_tracking(atlas, p2):
             net = float(np.linalg.norm(pts[-1] - pts[0]))
             d.text((x, y), f"Cell T{ftid}", font=F["bodyb"], fill=ORANGE if classified else INK)
             d.text((x, y + 30), f"net displacement {net:5.0f} um", font=F["body"], fill=INK)
-            y = tag(d, (x, y + 64), "observed_in_image")
+            y = tag(d, (x, y + 64), "observed_directly_in_image")
         if classified:
             y += 4
             for name in ("migrating", "quiescent", "indeterminate"):
@@ -246,9 +246,9 @@ def scene_chain(atlas):
         return f"{c['citation'].split()[0]} et al., PMID {c['pmid']}"
 
     steps = [
-        ("Image -> Cell", "observed_in_image", f"Segmented in every frame. Mean cell probability "
+        ("Image -> Cell", "observed_directly_in_image", f"Segmented in every frame. Mean cell probability "
                                                f"{flag['observations'][2]['confidence']}."),
-        ("Cell -> Measured phenotype", "observed_in_image",
+        ("Cell -> Measured phenotype", "observed_directly_in_image",
          f"Net displacement {v['net_displacement_um']:.0f} um over 28.5 h, directionality {v['directionality']}."),
         ("Phenotype label", "inferred_by_model", "Migrating: moved more than one own cell diameter."),
         ("Biological entity: CXCL12 / CXCR4", "supported_by_literature",

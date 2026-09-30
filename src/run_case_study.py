@@ -4,7 +4,7 @@ Phases 4-6 — Flagship case study: U373 migration -> CXCL12/CXCR4 axis.
 Image -> Cell -> Phenotype -> Biological Entity, on the CTC PhC-C2DH-U373
 time-lapse data from Phase 2:
   1. segment + track every frame (cached Phase 2 masks, same clean-up)
-  2. measure per-cell morphology and migration           (observed_in_image)
+  2. measure per-cell morphology and migration           (observed_directly_in_image)
   3. rule-based phenotype labels                          (inferred_by_model)
   4. curated literature links for the phenotype           (supported_by_literature)
   5. a per-cell hypothesis that is never presented as fact (inferred_by_model)

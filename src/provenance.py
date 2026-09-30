@@ -12,7 +12,7 @@ from pathlib import Path
 
 import pandas as pd
 
-OBSERVED = "observed_in_image"
+OBSERVED = "observed_directly_in_image"  # matches the web app's EvidenceLevel type
 LITERATURE = "supported_by_literature"
 INFERRED = "inferred_by_model"
 LEVEL_TEXT = {
