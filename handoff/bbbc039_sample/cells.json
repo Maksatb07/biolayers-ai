@@ -48,7 +48,7 @@
     },
     "tracking": {
       "model": "BioLayers overlap tracker (Hungarian assignment on mask IoU + gap/flicker clean-up)",
-      "version": "code a1fcb8a",
+      "version": "code 52ffb95",
       "confidence": "per track: mean IoU between the cell's masks in consecutive frames",
       "dataset": "CTC PhC-C2DH-U373, training sequences 01 and 02 (230 frames)",
       "evaluation_metric": {
@@ -73,7 +73,7 @@
     },
     "phenotype_rules": {
       "model": "Rule-based phenotype classifier (transparent thresholds, not a learned model)",
-      "version": "rules 0.1.0, code a1fcb8a",
+      "version": "rules 0.1.0, code 52ffb95",
       "confidence": "per label: rule margin, the deciding feature's distance from its threshold mapped to 0.5-0.99 (not a probability)",
       "dataset": "no labelled phenotype data exists for these classes; thresholds set from cell-size units, not fitted to data",
       "evaluation_metric": {
